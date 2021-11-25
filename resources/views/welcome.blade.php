@@ -49,13 +49,12 @@
                         <div class="collapse navbar-collapse" id="appo-menu">
                             <!-- Header Items -->
                             <ul class="navbar-nav header-items ml-auto">
-                                <!-- <li class="nav-item active dropdown">
+                                {{-- <li class="nav-item active dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                                         Home
                                     </a>
                                     <div class="dropdown-menu mega-menu px-3 px-md-4 py-md-4"> -->
-                                        <!-- Shapes Container -->
-                                        <!-- <div class="shapes-container d-none d-lg-block">
+                                        <div class="shapes-container d-none d-lg-block">
                                             <div class="shape-1"></div>
                                         </div>
                                         <div class="row">
@@ -108,7 +107,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li> -->
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link scroll" href="#home">Home</a>
                                 </li>
@@ -126,12 +125,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link scroll" href="#blog">Blog</a>
                                 </li>
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
+                                {{-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#blog" id="navbarDropdown-2" role="button" data-toggle="dropdown">
                                         Blog
-                                    </a> -->
-                                    <!-- Blog Menu -->
-                                    <!-- <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
+                                    </a>
+                                    <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="single-menu">
@@ -145,7 +143,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li> -->
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link scroll" href="#contact">Contact</a>
                                 </li>
@@ -1075,22 +1073,23 @@ To minimize the barriers of digital transaction, and support financial instituti
                         <!-- Contact Box -->
                         <div class="contact-box text-center">
                             <!-- Contact Form -->
-                            <form id="contact-form" method="POST" action="">
+                            <form id="contact-form" action="{{ route('contact.sendmail') }}">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="required">
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="required">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                            <textarea class="form-control" name="message" id="message" placeholder="Message" required="required"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -1098,7 +1097,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                                     </div>
                                 </div>
                             </form>
-                            <p class="form-message"></p>
+                            {{-- <p class="form-message"></p> --}}
                         </div>
                     </div>
                 </div>
@@ -1214,8 +1213,26 @@ To minimize the barriers of digital transaction, and support financial instituti
     <!-- Plugins js -->
     <script src="{{ asset('assets/js/plugins/plugins.min.js') }}"></script>
 
+    {{-- sweetalert --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var Toast = Swal.mixin({
+            toast: true,
+            animation: true,
+            position: 'top-right',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+    </script>
+
     <!-- Active js -->
     <script src="{{ asset('assets/js/active.js') }}"></script>
+
 </body>
 
 </html>
