@@ -1,132 +1,1221 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html class="no-js" lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Title  -->
+    <title>EPS | Easy Payment System</title>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <!-- Favicon  -->
+    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+    <!-- ***** All CSS Files ***** -->
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+    <!-- Style css -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+
+</head>
+
+<body class="miami">
+
+    <!--====== Scroll To Top Area Start ======-->
+    <div id="scrollUp" title="Scroll To Top">
+        <i class="icofont-bubble-up"></i>
+    </div>
+    <!--====== Scroll To Top Area End ======-->
+
+    <div class="all-area">
+        <!-- ***** Header Start ***** -->
+        <header class="section header-area">
+            <div id="appo-header" class="main-header-area">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="https://eps.com.bd/">
+                            <img class="logo" src="{{ asset('assets/img/logo/logo.png') }}" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- Appo Menu -->
+                        <div class="collapse navbar-collapse" id="appo-menu">
+                            <!-- Header Items -->
+                            <ul class="navbar-nav header-items ml-auto">
+                                <!-- <li class="nav-item active dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                        Home
+                                    </a>
+                                    <div class="dropdown-menu mega-menu px-3 px-md-4 py-md-4"> -->
+                                        <!-- Shapes Container -->
+                                        <!-- <div class="shapes-container d-none d-lg-block">
+                                            <div class="shape-1"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3 dropdown-headings d-none d-lg-block">
+                                                <span class="fw-6">Appo</span>
+                                                <h5 class="text-uppercase my-2">Creative Design</h5>
+                                                <p class="slag fw-5">Verified by developers &amp; Truted by tons of customers</p>
+                                                <div class="dropdown-btn mt-3">
+                                                    <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">Get Started</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4 col-lg-3">
+                                                <ul class="single-menu">
+                                                    <li class="page-title d-inline-block text-uppercase mb-2">Home Variations</li>
+                                                    <li><a class="dropdown-item" href="index.html">Homepage - Miami</a></li>
+                                                    <li><a class="dropdown-item" href="index-riga.html">Homepage - Riga</a></li>
+                                                    <li><a class="dropdown-item" href="index-tokyo.html">Homepage - Tokyo</a></li>
+                                                    <li><a class="dropdown-item" href="index-rome.html">Homepage - Rome</a></li>
+                                                    <li><a class="dropdown-item" href="index-paris.html">Homepage - Paris</a></li>
+                                                    <li><a class="dropdown-item" href="index-london.html">Homepage - London</a></li>
+                                                    <li><a class="dropdown-item" href="index-seoul.html">Homepage - Seoul</a></li>
+                                                    <li><a class="dropdown-item" href="index-moscow.html">Homepage - Moscow</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-md-4 col-lg-3">
+                                                <ul class="single-menu">
+                                                    <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>
+                                                    <li><a class="dropdown-item" href="about-us.html">About Us</a></li>
+                                                    <li><a class="dropdown-item" href="pricing.html">Pricing Plans</a></li>
+                                                    <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+                                                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                                    <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                                    <li><a class="dropdown-item" href="sign-up.html">Register</a></li>
+                                                    <li><a class="dropdown-item" href="download.html">Download</a></li>
+                                                    <li><a class="dropdown-item" href="thank-you.html">Thank You</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-md-4 col-lg-3">
+                                                <ul class="single-menu">
+                                                    <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>
+                                                    <li><a class="dropdown-item" href="forgot.html">Forget Password</a></li>
+                                                    <li><a class="dropdown-item" href="newsletter.html">Newsletter</a></li>
+                                                    <li><a class="dropdown-item" href="error-v1.0.html">Error v1.0</a></li>
+                                                    <li><a class="dropdown-item" href="error-v2.0.html">Error v2.0</a></li>
+                                                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                                    <li><a class="dropdown-item" href="maintenance.html">Maintenance</a></li>
+                                                    <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+                                                    <li><a class="dropdown-item disabled" href="#">More Coming Soon</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link scroll" href="#home">Home</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link scroll" href="#features">Features</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link scroll" href="#pricing">Pricing</a>
+                                </li> -->
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link scroll" href="#team">Team</a>
+                                </li> -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link scroll" href="#blog">Blog</a>
+                                </li>
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
+                                        Blog
+                                    </a> -->
+                                    <!-- Blog Menu -->
+                                    <!-- <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="single-menu">
+                                                    <li><a class="dropdown-item" href="blog-two-column.html">Blog - 2 Column</a></li>
+                                                    <li><a class="dropdown-item" href="blog-three-column.html">Blog - 3 Column</a></li>
+                                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
+                                                    <li><a class="dropdown-item" href="blog-right-sidebar.html">Blog - Right Sidebar</a></li>
+                                                    <li><a class="dropdown-item" href="blog-details-left-sidebar.html">Blog Details - Left Sidebar</a></li>
+                                                    <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Blog Details - Right Sidebar</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link scroll" href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            @endif
+            </div>
+        </header>
+        <!-- ***** Header End ***** -->
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
+        <!-- ***** Welcome Area Start ***** -->
+        <section id="home" class="section welcome-area d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Welcome Intro Start -->
+                    <div class="col-12 col-md-7 col-lg-6">
+                        <div class="welcome-intro">
+                            <h1>EPS</h1>
+                            <h3 class="fw-3 mt-2 mt-sm-3">Easy Payment System</h3>
+                            <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                            <div class="button-group">
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered"><span>Download</span></a>
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
+                    <div class="col-12 col-md-5 col-lg-6">
+                        <!-- Welcome Thumb -->
+                        <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                            <img src="{{ asset('assets/img/welcome/welcome-mockup-2.png') }}" alt="">
+                        </div>
+                        <!-- Video Icon -->
+                        <div class="video-icon d-none d-lg-block">
+                            <a class="play-btn" data-fancybox href="https://www.youtube.com/watch?v=SSJrsPlNFp8">
+                                <i class="icofont-ui-play"></i>
                             </a>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+        </section>
+        <!-- ***** Welcome Area End ***** -->
+
+        <!-- ***** Benifits Area Start ***** -->
+        <section id="benifits" class="section benifits-area ptb_100">
+            <div class="container">
+                <div class="row">
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
+                        <div class="benifits-item text-center p-3">
+                            <div class="feature-icon">
+                                <img src="{{ asset('assets/img/icon/1.png') }}" alt="">
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Best Experience</h3>
+                                <p>Advanced features like real time usage update and charge-free bill payment guarantee the best possible app experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benifits-item text-center p-3">
+                            <div class="feature-icon">
+                                <img src="{{ asset('assets/img/icon/2.png') }}" alt="">
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Easy to use</h3>
+                                <p>Our app is designed to give you a great experience. Features like personalized wallet, adding cashout charges makes our app easy and convenient to use & designed only for you</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benifits-item text-center p-3">
+                            <div class="feature-icon">
+                                <img src="{{ asset('assets/img/icon/3.png') }}" alt="">
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">24/7 Support</h3>
+                                <p>24/7 support services are here to ensure our customers' success and business productivity – whether for on-site assistance, technical, or remote support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+                        <div class="benifits-item text-center p-3">
+                            <div class="feature-icon">
+                                <img src="{{ asset('assets/img/icon/4.png') }}" alt="">
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Complete Security</h3>
+                                <p>Full-proof security is ensured through features like blockchain technology and device authentication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Benifits Area End ***** -->
+
+        <!-- ***** About App Area Start ***** -->
+        <section class="section about-app-area ptb_100">
+            <div class="shapes-container">
+                <div class="shape-1"></div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <!-- About Text -->
+                        <div class="about-text">
+                            <!-- Headings -->
+                            <div class="headings d-flex align-items-center mb-4">
+                                <span class="text-uppercase d-none d-sm-block">About</span>
+                                <h2 class="text-capitalize">Easy to manage all your transaction using
+                                    EPS App</h2>
+                            </div>
+                            <p class="my-3">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system. Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc. </p>
+                            <p class="d-none d-sm-block my-3">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p>
+                            <!-- Store Buttons -->
+                            <div class="button-group store-buttons">
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                                    <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                    <p class="dsp-tc">GET IT ON
+                                        <br> <span>Google Play</span></p>
+                                </a>
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                                    <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                    <p class="dsp-tc">AVAILABLE ON
+                                        <br> <span>Apple Store</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <!-- About Thumb -->
+                        <div class="about-thumb text-center d-none d-lg-block">
+                            <img src="{{ asset('assets/img/bg/about.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** About App Area End ***** -->
+
+        <!-- ***** Work Area Start ***** -->
+        <section class="section work-area ptb_100">
+            <!-- Work Slider Wrapper -->
+            <div class="work-wrapper d-none d-md-block">
+                <div class="work-slider-wrapper" data-aos="zoom-in">
+                    <!-- Work Slider -->
+                    <ul class="work-slider owl-carousel">
+                        <li class="slide-item">
+                            <img src="{{ asset('assets/img/screenshots/1.png') }}" alt="">
+                        </li>
+                        <li class="slide-item">
+                            <img src="{{ asset('assets/img/screenshots/2.png') }}" alt="">
+                        </li>
+                        <li class="slide-item">
+                            <img src="{{ asset('assets/img/screenshots/3.png') }}" alt="">
+                        </li>
+                        <li class="slide-item">
+                            <img src="{{ asset('assets/img/screenshots/4.png') }}" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center d-md-none">
+                    <!-- Section Heading -->
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Few steps to Setup</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Work Content -->
+                <div class="row justify-content-end justify-content-lg-between work-content" id="work-slider-pager">
+                    <div class="col-12 col-sm-6">
+                        <a href="#" class="pager-item active">
+                            <!-- Single Work -->
+                            <div class="single-work d-inline-block text-center p-4">
+                                <h3 class="mb-2">Balance Transfer</h3>
+                                <p>Under this service, an account holder in a bank/MFS/e-wallet can send money from his/her account to a receiver’s bank/MFS/e-wallet account using EPS.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <a href="#" class="pager-item">
+                            <!-- Single Work -->
+                            <div class="single-work d-inline-block text-center p-4">
+                                <h3 class="mb-2">Bill and Fee Payment</h3>
+                                <p>Using EPS App, the registered user will be able to pay bills and fees.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <a href="#" class="pager-item">
+                            <!-- Single Work -->
+                            <div class="single-work d-inline-block text-center p-4">
+                                <h3 class="mb-2">Merchant Payment</h3>
+                                <p>Any offline merchant can use EPS to receive the payment into his/her bank/MFS/e-wallet account from a walking customer’s bank/MFS/e-wallet account.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <a href="#" class="pager-item">
+                            <!-- Single Work -->
+                            <div class="single-work d-inline-block text-center p-4">
+                                <h3 class="mb-2">Corporate Services</h3>
+                                <p>EPS will provide one-stop solution for the corporate clients dealing with large number of transactions. Easy Wage Disbursement is one of such services to be availed from EPS.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Work Area End ***** -->
+
+        <!-- ***** Features Area Start ***** -->
+        <section id="features" class="section features-area ptb_100">
+            <div class="shapes-container">
+                <div class="shape bg-shape"></div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="features-text">
+                            <!-- Headings -->
+                            <div class="headings d-flex align-items-center mb-4">
+                                <span class="text-uppercase d-none d-sm-block">Features</span>
+                                <h2 class="text-capitalize">EPS is the only all in one payment gateway to do any kind of transaction</h2>
+                            </div>
+                            <p class="my-3">VISION
+To accelerate the transformation to achieve a sustainable digital financial eco-system.
+MISSION
+To minimize the barriers of digital transaction, and support financial institutions by facilitating their customers/clients with digital payment services.</p>
+                            <!-- Counter List -->
+                            <div class="counter-list">
+                                <ul>
+                                    <li>
+                                        <!-- Single Counter -->
+                                        <div class="single-counter px-4 py-3 text-center">
+                                            <!-- Counter Icon -->
+                                            <div class="counter-icon">
+                                                <i class="icofont-repair"></i>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="counter-text">
+                                                <span class="counter d-inline-block mt-3 mb-2">2350</span>
+                                                <h5>Users</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!-- Single Counter -->
+                                        <div class="single-counter px-4 py-3 text-center">
+                                            <!-- Counter Icon -->
+                                            <div class="counter-icon">
+                                                <i class="icofont-heart-alt"></i>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="counter-text">
+                                                <span class="counter d-inline-block mt-3 mb-2">1895</span>
+                                                <h5>Acounts</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!-- Single Counter -->
+                                        <div class="single-counter px-4 py-3 text-center">
+                                            <!-- Counter Icon -->
+                                            <div class="counter-icon">
+                                                <i class="icofont-beard"></i>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="counter-text">
+                                                <span class="counter d-inline-block mt-3 mb-2">1580</span>
+                                                <h5>Developers</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <!-- Single Counter -->
+                                        <div class="single-counter px-4 py-3 text-center">
+                                            <!-- Counter Icon -->
+                                            <div class="counter-icon">
+                                                <i class="icofont-safety"></i>
+                                            </div>
+                                            <!-- Counter Text -->
+                                            <div class="counter-text">
+                                                <span class="counter d-inline-block mt-3 mb-2">1358</span>
+                                                <h5>Download</h5>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+                        <!-- Featured Items -->
+                        <div class="featured-items">
+                            <ul>
+                                <li>
+                                    <!-- Single Features Item -->
+                                    <div class="single-features media p-3">
+                                        <!-- Features Title -->
+                                        <div class="features-title mr-3">
+                                            <img src="{{ asset('assets/img/icon/icon-1.svg') }}" alt="">
+                                        </div>
+                                        <!-- Features Text -->
+                                        <div class="features-text media-body">
+                                            <h3>Simple &amp; Light</h3>
+                                            <p>Using EPS App, the registered user will be able to pay bills and fees.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <!-- Single Features Item -->
+                                    <div class="single-features media p-3">
+                                        <!-- Features Title -->
+                                        <div class="features-title mr-3">
+                                            <img src="{{ asset('assets/img/icon/icon-2.svg') }}" alt="">
+                                        </div>
+                                        <!-- Features Text -->
+                                        <div class="features-text media-body">
+                                            <h3>Creative Design</h3>
+                                            <p>Merchants selling goods or services online can also avail EPS</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <!-- Single Features Item -->
+                                    <div class="single-features media p-3">
+                                        <!-- Features Title -->
+                                        <div class="features-title mr-3">
+                                            <img src="{{ asset('assets/img/icon/icon-3.svg') }}" alt="">
+                                        </div>
+                                        <!-- Features Text -->
+                                        <div class="features-text media-body">
+                                            <h3>Retina Ready</h3>
+                                            <p>EPS will provide one-stop solution for the corporate clients</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <!-- Single Features Item -->
+                                    <div class="single-features media p-3">
+                                        <!-- Features Title -->
+                                        <div class="features-title mr-3">
+                                            <img src="{{ asset('assets/img/icon/icon-4.svg') }}" alt="">
+                                        </div>
+                                        <!-- Features Text -->
+                                        <div class="features-text media-body">
+                                            <h3>Unlimited Features</h3>
+                                            <p>Any offline merchant can use EPS to receive the payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Features Area End ***** -->
+
+        <!-- ***** Screenshots Area Start ***** -->
+        <section id="screenshots" class="section screenshots-area ptb_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- App Screenshot Slider Area -->
+                        <div class="app-screenshots">
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="{{ asset('assets/img/screenshots/1.png') }}" alt="">
+                                <!-- Screenshots Overlay -->
+                                <div class="screenshots-overlay">
+                                    <a href="{{ asset('assets/img/screenshots/1.png') }}" data-fancybox="images"><i class="icofont-image"></i></a>
+                                </div>
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="{{ asset('assets/img/screenshots/2.png') }}" alt="">
+                                <!-- Screenshots Overlay -->
+                                <div class="screenshots-overlay">
+                                    <a href="{{ asset('assets/img/screenshots/2.png') }}" data-fancybox="images"><i class="icofont-image"></i></a>
+                                </div>
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="{{ asset('assets/img/screenshots/3.png') }}" alt="">
+                                <!-- Screenshots Overlay -->
+                                <div class="screenshots-overlay">
+                                    <a href="{{ asset('assets/img/screenshots/3.png') }}" data-fancybox="images"><i class="icofont-image"></i></a>
+                                </div>
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="{{ asset('assets/img/screenshots/4.png') }}" alt="">
+                                <!-- Screenshots Overlay -->
+                                <div class="screenshots-overlay">
+                                    <a href="{{ asset('assets/img/screenshots/4.png') }}" data-fancybox="images"><i class="icofont-image"></i></a>
+                                </div>
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="{{ asset('assets/img/screenshots/5.png') }}" alt="">
+                                <!-- Screenshots Overlay -->
+                                <div class="screenshots-overlay">
+                                    <a href="{{ asset('assets/img/screenshots/5.png') }}" data-fancybox="images"><i class="icofont-image"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Screenshots Area End ***** -->
+
+        <!-- ***** Price Plan Area Start ***** -->
+        <!-- <section id="pricing" class="section price-plan-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6"> -->
+                        <!-- Section Heading -->
+                        <!-- <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Affordable Pricing Plans</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="price-plan-wrapper">
+                        <div class="single-price-plan">
+                            <div class="price-header d-flex align-items-center justify-content-between my-4 px-3">
+                                <h4 class="plan-title text-uppercase">
+                                    Starter
+                                </h4>
+                                <div class="plan-cost">
+                                    <span class="plan-price">$19</span>
+                                    <span class="plan-type text-uppercase">/month</span>
+                                </div>
+                            </div>
+                            <ul class="plan-features pb-3">
+                                <li><i class="icofont-check"></i>5GB Linux Web Space</li>
+                                <li><i class="icofont-check"></i>5 MySQL Databases</li>
+                                <li><i class="icofont-check"></i>Unlimited Email</li>
+                                <li><i class="icofont-check"></i>250Gb mo Transfer</li>
+                                <li><i class="icofont-close"></i>24/7 Tech Support</li>
+                                <li><i class="icofont-close"></i>Daily Backups</li>
+                            </ul>
+                            <div class="plan-select">
+                                <a class="btn btn-bordered text-uppercase" href="#">Select Plan</a>
+                            </div>
+                        </div>
+                        <div class="single-price-plan">
+                            <div class="price-header d-flex align-items-center justify-content-between my-4 px-3">
+                                <h4 class="plan-title text-uppercase">
+                                    Basic
+                                </h4>
+                                <div class="plan-cost">
+                                    <span class="plan-price">$29</span>
+                                    <span class="plan-type text-uppercase">/month</span>
+                                </div>
+                            </div>
+                            <ul class="plan-features pb-3">
+                                <li><i class="icofont-check"></i>10GB Linux Web Space</li>
+                                <li><i class="icofont-check"></i>10 MySQL Databases</li>
+                                <li><i class="icofont-check"></i>Unlimited Email</li>
+                                <li><i class="icofont-check"></i>500Gb mo Transfer</li>
+                                <li><i class="icofont-check"></i>24/7 Tech Support</li>
+                                <li><i class="icofont-close"></i>Daily Backups</li>
+                            </ul>
+                            <div class="plan-select">
+                                <a class="btn btn-bordered text-uppercase" href="#">Select Plan</a>
+                            </div>
+                        </div>
+                        <div class="single-price-plan featured">
+                            <div class="price-header d-flex align-items-center justify-content-between my-4 px-3">
+                                <h4 class="plan-title text-uppercase">
+                                    Pro
+                                </h4>
+                                <div class="plan-cost">
+                                    <span class="plan-price">$49</span>
+                                    <span class="plan-type text-uppercase">/month</span>
+                                </div>
+                            </div>
+                            <ul class="plan-features pb-3">
+                                <li><i class="icofont-check"></i>25GB Linux Web Space</li>
+                                <li><i class="icofont-check"></i>25 MySQL Databases</li>
+                                <li><i class="icofont-check"></i>Unlimited Email</li>
+                                <li><i class="icofont-check"></i>2000Gb mo Transfer</li>
+                                <li><i class="icofont-check"></i>24/7 Tech Support</li>
+                                <li><i class="icofont-check"></i>Daily Backups</li>
+                            </ul>
+                            <div class="plan-select">
+                                <a class="btn btn-bordered text-uppercase" href="#">Select Plan</a>
+                            </div>
+                        </div>
+                        <div class="single-price-plan">
+                            <div class="price-header d-flex align-items-center justify-content-between my-4 px-3">
+                                <h4 class="plan-title text-uppercase">
+                                    Ultra
+                                </h4>
+                                <div class="plan-cost text-uppercase">
+                                    <span class="plan-price">$99</span>
+                                    <span class="plan-type">/month</span>
+                                </div>
+                            </div>
+                            <ul class="plan-features pb-3">
+                                <li><i class="icofont-check"></i>100GB Linux Web Space</li>
+                                <li><i class="icofont-check"></i>Unlimited Databases</li>
+                                <li><i class="icofont-check"></i>Unlimited Email</li>
+                                <li><i class="icofont-check"></i>10000Gb mo Transfer</li>
+                                <li><i class="icofont-check"></i>24/7 Tech Support</li>
+                                <li><i class="icofont-check"></i>Daily Backups</li>
+                            </ul>
+                            <div class="plan-select">
+                                <a class="btn btn-bordered text-uppercase" href="#">Select Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- ***** Price Plan Area End ***** -->
+
+        <!-- ***** Testimonial Area Start ***** -->
+        <!--<section class="section testimonial-area ptb_100">
+            <div class="shapes-container">
+                <div class="shape bg-shape"></div>
+            </div>
+            <div class="container text-center">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-md-8">
+                        <div class="testimonials owl-carousel">
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-1.png" class="mx-auto d-block" alt="">
+                                <h3 class="client-name mt-4 mb-2">John Doe</h3>
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="client-description">
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-2.png" class="mx-auto d-block" alt="">
+                                <h3 class="client-name mt-4 mb-2">Jassica William</h3>
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="client-description">
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-3.png" class="mx-auto d-block" alt="">
+                                <h3 class="client-name mt-4 mb-2">Johnson Smith</h3>
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="client-description">
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-thumb d-none d-md-block">
+                            <div class="thumb-prev">
+                                <span>
+                                    <img src="assets/img/avatar/avatar-3.png" alt="">
+                                </span>
+                            </div>
+                            <div class="thumb-next">
+                                <span>
+                                    <img src="assets/img/avatar/avatar-2.png" alt="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- ***** Testimonial Area End ***** -->
+
+        <!-- ***** Team Area Start ***** -->
+        <!--<section id="team" class="section team-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Meet our Team Experts</h2>
+                            <p class="d-none d-sm-block mt-4">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="team-slider owl-carousel">
+                        <div class="single-team text-center px-3 py-2 m-2">
+                            <div class="team-photo mx-auto">
+                                <img src="assets/img/avatar/avatar-1.png" alt="">
+                            </div>
+                            <div class="team-content mt-2 mb-1">
+                                <h3 class="team-name mt-3 mb-2">Jonayed Hasan</h3>
+                                <h5 class="team-post mb-2">Co-Founder &amp; CEO</h5>
+                                <p class="team-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ex quibusdam aliquid dicta a explicabo.</p>
+                                <div class="team-media mt-3">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-team text-center px-3 py-2 m-2">
+                            <div class="team-photo mx-auto">
+                                <img src="assets/img/avatar/avatar-2.png" alt="">
+                            </div>
+                            <div class="team-content mt-2 mb-1">
+                                <h3 class="team-name mt-3 mb-2">Jassica William</h3>
+                                <h5 class="team-post mb-2">Web Developer</h5>
+                                <p class="team-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ex quibusdam aliquid dicta a explicabo.</p>
+                                <div class="team-media mt-3">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-team text-center px-3 py-2 m-2">
+                            <div class="team-photo mx-auto">
+                                <img src="assets/img/avatar/avatar-3.png" alt="">
+                            </div>
+                            <div class="team-content mt-2 mb-1">
+                                <h3 class="team-name mt-3 mb-2">John Deo</h3>
+                                <h5 class="team-post mb-2">ISO Developer</h5>
+                                <p class="team-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ex quibusdam aliquid dicta a explicabo.</p>
+                                <div class="team-media mt-3">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-team text-center px-3 py-2 m-2">
+                            <div class="team-photo mx-auto">
+                                <img src="assets/img/avatar/avatar-4.png" alt="">
+                            </div>
+                            <div class="team-content mt-2 mb-1">
+                                <h3 class="team-name mt-3 mb-2">Johnson Smith</h3>
+                                <h5 class="team-post mb-2">Android Developer</h5>
+                                <p class="team-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ex quibusdam aliquid dicta a explicabo.</p>
+                                <div class="team-media mt-3">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-team text-center px-3 py-2 m-2">
+                            <div class="team-photo mx-auto">
+                                <img src="assets/img/avatar/avatar-5.png" alt="">
+                            </div>
+                            <div class="team-content mt-2 mb-1">
+                                <h3 class="team-name mt-3 mb-2">Johnson Smith</h3>
+                                <h5 class="team-post mb-2">Android Developer</h5>
+                                <p class="team-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ex quibusdam aliquid dicta a explicabo.</p>
+                                <div class="team-media mt-3">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- ***** Team Area End ***** -->
+
+        <!-- ***** Start Free Area Start ***** -->
+        <section class="start-free-area">
+            <div class="container">
+                <div class="col-12">
+                    <!-- Start Free Content -->
+                    <div class="start-free-content d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between shadow-lg" data-aos="fade-up">
+                        <!-- Start Free Content -->
+                        <div class="start-free-text">
+                            <h2 class="mb-2">One-stop Merchant Payment solution</h2>
+                            <span>Easy Payment System</span>
+                        </div>
+                        <!-- Start Free Button -->
+                        <div class="start-free-btn mt-4 mt-lg-0">
+                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered"><span>Try EPS Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Start Free Area End ***** -->
+
+        <!-- ***** Download Area Start ***** -->
+        <section class="section download-area ptb_100">
+            <!-- Shapes Container -->
+            <div class="shapes-container d-none d-sm-block">
+                <div class="shape-2"></div>
+                <div class="shape-3"></div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Download Text -->
+                        <div class="download-text text-center">
+                            <h2>Download EPS</h2>
+                            <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                            <p class="d-none d-sm-block my-3">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system.</p>
+                            <!-- Store Buttons -->
+                            <div class="button-group store-buttons">
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                                    <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                    <p class="dsp-tc">GET IT ON
+                                        <br> <span>Google Play</span></p>
+                                </a>
+                                <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                                    <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                    <p class="dsp-tc">AVAILABLE ON
+                                        <br> <span>Apple Store</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Download Area End ***** -->
+
+        <!-- ***** Blog Area Start ***** -->
+        <section id="blog" class="section blog-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Section Heading -->
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Financial News</h2>
+                            <p class="d-none d-sm-block mt-4">Online payment gateways cannot accept money directly from a bank account if it is not connected with debit-credit card/internet banking.</p>
+                            <p class="d-block d-sm-none mt-4">Current online banking system is highly dependent on NPSB by Bangladesh Bank (Not all the banks are connected yet)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Blog -->
+                        <div class="single-blog wow fadeIn res-margin" data-wow-duration="2s">
+                            <!-- Blog Thumb -->
+                            <div class="blog-thumb">
+                                <a href="#"><img src="{{ asset('assets/img/blog/blog-1.jpg') }}" alt=""></a>
+                            </div>
+                            <!-- Blog Content -->
+                            <div class="blog-content p-4">
+                                <!-- Meta Info -->
+                                <ul class="meta-info d-flex justify-content-between">
+                                    <li>By <a href="#">EPS</a></li>
+                                    <li><a href="#">Nov 05, 2021</a></li>
+                                </ul>
+                                <!-- Blog Title -->
+                                <h3 class="blog-title my-3"><a href="#">Instant Fund transfer between bank to bank is Limited</a></h3>
+                                <p>Under this service, an account holder in a bank/MFS/e-wallet can send money from his/her account to a receiver’s bank/MFS/e-wallet account using EPS.</p>
+                                <a href="#" class="blog-btn mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Blog -->
+                        <div class="single-blog wow fadeIn res-margin" data-wow-duration="2s" data-wow-delay="0.2s">
+                            <!-- Blog Thumb -->
+                            <div class="blog-thumb">
+                                <a href="#"><img src="{{ asset('assets/img/blog/blog-2.jpg') }}" alt=""></a>
+                            </div>
+                            <!-- Blog Content -->
+                            <div class="blog-content p-4">
+                                <!-- Meta Info -->
+                                <ul class="meta-info d-flex justify-content-between">
+                                    <li>By <a href="#">EPS</a></li>
+                                    <li><a href="#">Nov 01, 2021</a></li>
+                                </ul>
+                                <!-- Blog Title -->
+                                <h3 class="blog-title my-3"><a href="#">Balance transfer, bill payment, etc. could be more cost effective</a></h3>
+                                <p>Bill and Fee Payment: Using EPS App, the registered user will be able to pay bills and fees.</p>
+                                <a href="#" class="blog-btn mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Blog -->
+                        <div class="single-blog wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+                            <!-- Blog Thumb -->
+                            <div class="blog-thumb">
+                                <a href="#"><img src="{{ asset('assets/img/blog/blog-3.jpg') }}" alt=""></a>
+                            </div>
+                            <!-- Blog Content -->
+                            <div class="blog-content p-4">
+                                <!-- Meta Info -->
+                                <ul class="meta-info d-flex justify-content-between">
+                                    <li>By <a href="#">EPS</a></li>
+                                    <li><a href="#">Oct 25, 2021</a></li>
+                                </ul>
+                                <!-- Blog Title -->
+                                <h3 class="blog-title my-3"><a href="#">Current online banking system is highly dependent on NPSB</a></h3>
+                                <p>EPS will provide one-stop solution for the corporate clients dealing with large number of transactions. Easy Wage Disbursement is one of such services to be availed from EPS.</p>
+                                <a href="#" class="blog-btn mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Blog Area End ***** -->
+
+        <!--====== Contact Area Start ======-->
+        <section id="contact" class="contact-area bg-gray ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Stay Tuned</h2>
+                            <p class="d-none d-sm-block mt-4">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system.</p>
+                            <p class="d-block d-sm-none mt-4">To accelerate the transformation to achieve a sustainable digital financial eco-system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Contact Box -->
+                        <div class="contact-box text-center">
+                            <!-- Contact Form -->
+                            <form id="contact-form" method="POST" action="">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-bordered mt-3 mt-sm-4" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="form-message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== Contact Area End ======-->
+
+        <!--====== Footer Area Start ======-->
+        <footer class="section footer-area footer-bg">
+            <!-- Footer Top -->
+            <div class="footer-top ptb_100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Logo -->
+                                <a class="navbar-brand" href="#">
+                                    <img class="logo" src="{{ asset('assets/img/logo/logo-white.png') }}" alt="">
+                                </a>
+                                <p class="text-white-50 mt-2 mb-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                                <!-- Social Icons -->
+                                <div class="social-icons d-flex">
+                                    <a class="facebook" href="https://www.facebook.com/EPSpay" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <!--<a class="twitter" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="google-plus" href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a class="vine" href="#">
+                                        <i class="fab fa-vine"></i>
+                                        <i class="fab fa-vine"></i>
+                                    </a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title text-white mb-2">Useful Links</h3>
+                                <ul>
+                                    <li class="py-2"><a class="text-white-50" href="#">Home</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">About Us</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Service details</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Blog</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title text-white mb-2">Product Help</h3>
+                                <ul>
+                                    <li class="py-2"><a class="text-white-50" href="#">FAQ</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Privacy Policy</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">App Support</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title text-white mb-2">Download</h3>
+                                <ul>
+                                    <li class="py-2"><a class="text-white-50" href="#">For IOS</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">For Android</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Copyright Area -->
+                            <div class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
+                                <!-- Copyright Left -->
+                                <div class="copyright-left text-white-50">&copy; Copyrights 2021 EPS All rights reserved.</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--====== Footer Area End ======-->
+    </div>
+
+
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="{{ asset('assets/js/jquery/jquery-3.3.1.min.js') }}"></script>
+
+    <!-- Bootstrap js -->
+    <script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins js -->
+    <script src="{{ asset('assets/js/plugins/plugins.min.js') }}"></script>
+
+    <!-- Active js -->
+    <script src="{{ asset('assets/js/active.js') }}"></script>
+</body>
+
 </html>
