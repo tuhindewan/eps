@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <ul class="single-menu">
-                                            <li><a class="dropdown-item" href="blog-two-column.html">Balance Transfer</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('balance.transfer') }}">Balance Transfer</a></li>
                                             <li><a class="dropdown-item" href="blog-three-column.html">Bill and Fee Payment</a></li>
                                             <li><a class="dropdown-item" href="blog-left-sidebar.html">Merchant Payment</a></li>
                                             <li><a class="dropdown-item" href="blog-right-sidebar.html">Balance Enquiry</a></li>

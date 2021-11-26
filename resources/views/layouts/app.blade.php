@@ -22,6 +22,8 @@
     <!-- Responsive css -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
+    @stack('page-css')
+
 </head>
 
 <body class="miami">

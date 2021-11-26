@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FAQController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Site\BalanceTransferController;
+use App\Http\Controllers\Site\FAQController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.s
 
 // FAQ
 Route::get('faq', [FAQController::class, 'index'])->name('faq');
+
+// Balance Transfer
+Route::get('balance-transfer', [BalanceTransferController::class, 'index'])->name('balance.transfer');
