@@ -49,103 +49,69 @@
                         <div class="collapse navbar-collapse" id="appo-menu">
                             <!-- Header Items -->
                             <ul class="navbar-nav header-items ml-auto">
-                                {{-- <li class="nav-item active dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                        Home
-                                    </a>
-                                    <div class="dropdown-menu mega-menu px-3 px-md-4 py-md-4"> -->
-                                        <div class="shapes-container d-none d-lg-block">
-                                            <div class="shape-1"></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-3 dropdown-headings d-none d-lg-block">
-                                                <span class="fw-6">Appo</span>
-                                                <h5 class="text-uppercase my-2">Creative Design</h5>
-                                                <p class="slag fw-5">Verified by developers &amp; Truted by tons of customers</p>
-                                                <div class="dropdown-btn mt-3">
-                                                    <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">Get Started</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-4 col-lg-3">
-                                                <ul class="single-menu">
-                                                    <li class="page-title d-inline-block text-uppercase mb-2">Home Variations</li>
-                                                    <li><a class="dropdown-item" href="index.html">Homepage - Miami</a></li>
-                                                    <li><a class="dropdown-item" href="index-riga.html">Homepage - Riga</a></li>
-                                                    <li><a class="dropdown-item" href="index-tokyo.html">Homepage - Tokyo</a></li>
-                                                    <li><a class="dropdown-item" href="index-rome.html">Homepage - Rome</a></li>
-                                                    <li><a class="dropdown-item" href="index-paris.html">Homepage - Paris</a></li>
-                                                    <li><a class="dropdown-item" href="index-london.html">Homepage - London</a></li>
-                                                    <li><a class="dropdown-item" href="index-seoul.html">Homepage - Seoul</a></li>
-                                                    <li><a class="dropdown-item" href="index-moscow.html">Homepage - Moscow</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-12 col-md-4 col-lg-3">
-                                                <ul class="single-menu">
-                                                    <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>
-                                                    <li><a class="dropdown-item" href="about-us.html">About Us</a></li>
-                                                    <li><a class="dropdown-item" href="pricing.html">Pricing Plans</a></li>
-                                                    <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
-                                                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                                                    <li><a class="dropdown-item" href="login.html">Login</a></li>
-                                                    <li><a class="dropdown-item" href="sign-up.html">Register</a></li>
-                                                    <li><a class="dropdown-item" href="download.html">Download</a></li>
-                                                    <li><a class="dropdown-item" href="thank-you.html">Thank You</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-12 col-md-4 col-lg-3">
-                                                <ul class="single-menu">
-                                                    <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>
-                                                    <li><a class="dropdown-item" href="forgot.html">Forget Password</a></li>
-                                                    <li><a class="dropdown-item" href="newsletter.html">Newsletter</a></li>
-                                                    <li><a class="dropdown-item" href="error-v1.0.html">Error v1.0</a></li>
-                                                    <li><a class="dropdown-item" href="error-v2.0.html">Error v2.0</a></li>
-                                                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                                                    <li><a class="dropdown-item" href="maintenance.html">Maintenance</a></li>
-                                                    <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
-                                                    <li><a class="dropdown-item disabled" href="#">More Coming Soon</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link scroll" href="#home">Home</a>
                                 </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link scroll" href="#features">Features</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link scroll" href="#pricing">Pricing</a>
-                                </li> -->
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link scroll" href="#team">Team</a>
-                                </li> -->
-
-                                <li class="nav-item">
-                                    <a class="nav-link scroll" href="#blog">Blog</a>
-                                </li>
-                                {{-- <li class="nav-item dropdown">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#blog" id="navbarDropdown-2" role="button" data-toggle="dropdown">
-                                        Blog
+                                        Services
                                     </a>
                                     <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="single-menu">
-                                                    <li><a class="dropdown-item" href="blog-two-column.html">Blog - 2 Column</a></li>
-                                                    <li><a class="dropdown-item" href="blog-three-column.html">Blog - 3 Column</a></li>
-                                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item" href="blog-right-sidebar.html">Blog - Right Sidebar</a></li>
-                                                    <li><a class="dropdown-item" href="blog-details-left-sidebar.html">Blog Details - Left Sidebar</a></li>
-                                                    <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Blog Details - Right Sidebar</a></li>
+                                                    <li><a class="dropdown-item" href="blog-two-column.html">Balance Transfer</a></li>
+                                                    <li><a class="dropdown-item" href="blog-three-column.html">Bill and Fee Payment</a></li>
+                                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Merchant Payment</a></li>
+                                                    <li><a class="dropdown-item" href="blog-right-sidebar.html">Balance Enquiry</a></li>
+                                                    <li><a class="dropdown-item" href="blog-details-left-sidebar.html">Mobile Top-up</a></li>
+                                                    <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Corporate Services</a></li>
+                                                    <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Enhancing Banking Services</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                </li> --}}
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#blog" id="navbarDropdown-2" role="button" data-toggle="dropdown">
+                                        Registration
+                                    </a>
+                                    <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="single-menu">
+                                                    <li><a class="dropdown-item" href="blog-two-column.html">Merchant Registration</a></li>
+                                                    <li><a class="dropdown-item" href="blog-three-column.html">User Registration</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
                                 <li class="nav-item">
-                                    <a class="nav-link scroll" href="#contact">Contact</a>
+                                    <a class="nav-link scroll" href="#features">Features</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#blog" id="navbarDropdown-2" role="button" data-toggle="dropdown">
+                                        App Support
+                                    </a>
+                                    <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="single-menu">
+                                                    <li><a class="dropdown-item" href="blog-two-column.html">For iOS</a></li>
+                                                    <li><a class="dropdown-item" href="blog-three-column.html">For Android</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link scroll" href="#contact">Contact us</a>
                                 </li>
                             </ul>
                         </div>
@@ -1146,11 +1112,11 @@ To minimize the barriers of digital transaction, and support financial instituti
                                 <!-- Footer Title -->
                                 <h3 class="footer-title text-white mb-2">Useful Links</h3>
                                 <ul>
-                                    <li class="py-2"><a class="text-white-50" href="#">Home</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">About Us</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Service details</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Service Details</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">Blog</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Contact</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Career</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1162,8 +1128,9 @@ To minimize the barriers of digital transaction, and support financial instituti
                                 <ul>
                                     <li class="py-2"><a class="text-white-50" href="#">FAQ</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">Privacy Policy</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">App Support</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">Terms &amp; Conditions</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Site Map</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Cookie Policy</a></li>
                                 </ul>
                             </div>
                         </div>
