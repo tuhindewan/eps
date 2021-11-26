@@ -1126,7 +1126,9 @@ To minimize the barriers of digital transaction, and support financial instituti
                                 <!-- Footer Title -->
                                 <h3 class="footer-title text-white mb-2">Product Help</h3>
                                 <ul>
-                                    <li class="py-2"><a class="text-white-50" href="#">FAQ</a></li>
+                                    <li class="py-2">
+                                        <a class="text-white-50" href="{{ route('faq') }}">FAQ</a>
+                                    </li>
                                     <li class="py-2"><a class="text-white-50" href="#">Privacy Policy</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">Terms &amp; Conditions</a></li>
                                     <li class="py-2"><a class="text-white-50" href="#">Site Map</a></li>
