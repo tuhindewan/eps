@@ -15,7 +15,7 @@
                     <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#home">Home</a>
+                            <a class="nav-link scroll" href="{{ url('/#home') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#blog" id="navbarDropdown-2" role="button" data-toggle="dropdown">
@@ -56,7 +56,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#features">Features</a>
+                            <a class="nav-link scroll" href="{{ url('/#features') }}">Features</a>
                         </li>
 
                         <li class="nav-item dropdown">

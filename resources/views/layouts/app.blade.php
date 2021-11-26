@@ -72,7 +72,7 @@
 
     <!-- Active js -->
     <script src="{{ asset('assets/js/active.js') }}"></script>
-
+    @stack('page-js')
 </body>
 
 </html>
