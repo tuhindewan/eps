@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\Site\BalanceTransferController;
 use App\Http\Controllers\Site\FAQController;
+use App\Http\Controllers\Site\BillPaymentController;
+use App\Http\Controllers\Site\BalanceTransferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,6 @@ Route::get('faq', [FAQController::class, 'index'])->name('faq');
 
 // Balance Transfer
 Route::get('balance-transfer', [BalanceTransferController::class, 'index'])->name('balance.transfer');
+
+// Bill Payment
+Route::get('bill-fee-payment', [BillPaymentController::class, 'index'])->name('bill.payment');
