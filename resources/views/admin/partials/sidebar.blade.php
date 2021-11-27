@@ -60,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('corporate.edit', 1) }}" class="nav-link {{ Route::is('corporate.edit') ? 'active' : '' }}">
                 <i class="nav-icon fab fa-acquisitions-incorporated"></i>
               <p>
                 Corporate Services
