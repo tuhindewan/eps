@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             BalanceTransferSeeder::class,
             BillPaymentSeeder::class,
             MerchantPaymentSeeder::class,
+            BalanceEnquirySeeder::class,
         ]);
     }
 }

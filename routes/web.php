@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BalanceInquiryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Site\FAQController;
@@ -35,8 +36,8 @@ Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
 
     //Balance transfer
-    Route::get('/balanc-transfer/{balance}/edit', [AdminBalanceTransferController::class, 'edit'])->name('balance.edit');
-    Route::put('/balanc-transfer/{balance}', [AdminBalanceTransferController::class, 'update'])->name('balance.update');
+    Route::get('/balance-transfer/{balance}/edit', [AdminBalanceTransferController::class, 'edit'])->name('balance.edit');
+    Route::put('/balance-transfer/{balance}', [AdminBalanceTransferController::class, 'update'])->name('balance.update');
 
     //Bill Payment
     Route::get('/bill-payment/{bill}/edit', [AdminBillPaymentController::class, 'edit'])->name('bill.edit');
@@ -45,6 +46,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Merchant Payment
     Route::get('/merchant-payment/{merchant}/edit', [AdminMerchantPaymentController::class, 'edit'])->name('merchant.edit');
     Route::put('/merchant-payment/{merchant}', [AdminMerchantPaymentController::class, 'update'])->name('merchant.update');
+
+    //Balance Enquiry
+    Route::get('/balance-enquiry/{enquiry}/edit', [BalanceInquiryController::class, 'edit'])->name('enquiry.edit');
+    Route::put('/balance-enquiry/{enquiry}', [BalanceInquiryController::class, 'update'])->name('enquiry.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

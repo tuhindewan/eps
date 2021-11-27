@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('enquiry.edit', 1) }}" class="nav-link {{ Route::is('enquiry.edit') ? 'active' : '' }}">
               <i class="nav-icon fas fa-coins "></i>
               <p>
                 Balance Enquiry

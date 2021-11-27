@@ -1,12 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\BalanceEnquiry;
 use Illuminate\Http\Request;
+use App\Models\BalanceEnquiry;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Database\Seeders\BalanceEnquirySeeder;
 
-class BalanceEnquiryController extends Controller
+class BalanceInquiryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +18,7 @@ class BalanceEnquiryController extends Controller
      */
     public function index()
     {
-        $enquiry = BalanceEnquiry::first();
-        return view('balance_enquiry.index', compact('enquiry'));
+        //
     }
 
     /**
@@ -57,9 +59,9 @@ class BalanceEnquiryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BalanceEnquiry $enquiry)
     {
-        //
+        return view('admin.enquiry.edit', compact('enquiry'));
     }
 
     /**
@@ -69,9 +71,28 @@ class BalanceEnquiryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BalanceEnquiry $enquiry)
     {
-        //
+        if ($request->image) {
+            $imageExtension = $request->image->extension();
+            $name = time() . '.' . $imageExtension;
+            Image::make($request->image)->save(public_path('images/') . $name);
+            DB::table('balance_enquiries')->where('id', $enquiry->id)->update([
+                'image' => $name,
+            ]);
+
+            // $userPhoto = public_path('images/') . $enquiry->image;
+            // if (file_exists($userPhoto)) {
+            //     @unlink($userPhoto);
+            // }
+        }
+
+        DB::table('balance_enquiries')->where('id', $enquiry->id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('enquiry.edit', $enquiry)
+            ->with('success', 'Balance Enquiry feature has been updated');
     }
 
     /**

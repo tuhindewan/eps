@@ -3,6 +3,12 @@
 @push('page-css')
     <style>
         #more {display: none;}
+        .btn.btn-primary {
+            background: #007bff !important;
+            border-radius: 5px;
+            padding: 4px 15px !important;
+            font-size: 11px !important;
+        }
     </style>
 @endpush
 
@@ -16,7 +22,7 @@
                     <div class="breadcrumb-content d-flex flex-column align-items-center text-center">
                         <h3>Balance Enquiry</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="text-uppercase" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-uppercase" href="{{ url('/') }}">Home</a></li>
                             <li class="breadcrumb-item active">Balance Enquiry</li>
                         </ol>
                     </div>
@@ -34,13 +40,19 @@
                     <div class="col-12 col-md-6 order-2 order-md-1">
                         <!-- Maintenance Content -->
                         <div class="maintenance-content my-5 my-md-0">
-                            <h2>Server is under maintenance</h2>
-                            <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
-                            <a href="#" class="btn btn-primary" id="myBtn" onclick="myFunction()">Learn More</a>
+                            <h2>{{ $enquiry->title }}</h2>
+                            <p>
+                                {!! $enquiry->description !!}
+                                {{-- @if (strlen($enquiry->description) > 200)
+                                    <span id="dots">......</span>
+                                    <span id="more">{!! substr($enquiry->description, 200) !!}</span>
+                                @endif
+                                <button class="btn btn-sm btn-primary" onclick="descriptionExtend()" id="myBtn">Read more</button> --}}
+                            </p>
                         </div>
                     </div>
                     <div class="col-12 col-sm-10 col-md-6 order-1 order-md-2 mx-auto pt-4 pt-md-0">
-                        <img src="assets/img/welcome/Untitled-1.png" alt="">
+                        <img src="{{ 'images/'.$enquiry->image }}" alt="">
                     </div>
                 </div>
             </div>
@@ -51,20 +63,20 @@
 
 @push('page-js')
 <script>
-    function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function descriptionExtend() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
 }
 </script>
 @endpush
