@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             BalanceEnquirySeeder::class,
             MobileTop::class,
             CorporateServiceSeeder::class,
+            EnhancingBankingSeeder::class,
         ]);
     }
 }

@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('enhancing.edit', 1) }}" class="nav-link {{ Route::is('enhancing.edit') ? 'active' : '' }}"">
                 <i class="nav-icon fas fa-piggy-bank"></i>
               <p>
                 Enhancing Banking Services

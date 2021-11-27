@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\EnhancingBanking;
 use Illuminate\Http\Request;
+use App\Models\EnhancingBanking;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
 
 class EnhancingBankingServiceController extends Controller
 {
@@ -15,8 +17,7 @@ class EnhancingBankingServiceController extends Controller
      */
     public function index()
     {
-        $enhancing = EnhancingBanking::first();
-        return view('enhancing.index', compact('enhancing'));
+        //
     }
 
     /**
@@ -57,9 +58,9 @@ class EnhancingBankingServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(EnhancingBanking $enhancing)
     {
-        //
+        return view('admin.enhancing.edit', compact('enhancing'));
     }
 
     /**
@@ -69,9 +70,28 @@ class EnhancingBankingServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, EnhancingBanking $enhancing)
     {
-        //
+        if ($request->image) {
+            $imageExtension = $request->image->extension();
+            $name = time() . '.' . $imageExtension;
+            Image::make($request->image)->save(public_path('images/') . $name);
+            DB::table('enhancing_bankings')->where('id', $enhancing->id)->update([
+                'image' => $name,
+            ]);
+
+            // $userPhoto = public_path('images/') . $enhancing->image;
+            // if (file_exists($userPhoto)) {
+            //     @unlink($userPhoto);
+            // }
+        }
+
+        DB::table('enhancing_bankings')->where('id', $enhancing->id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('enhancing.edit', $enhancing)
+            ->with('success', 'Enhancing Banking Services feature has been updated');
     }
 
     /**

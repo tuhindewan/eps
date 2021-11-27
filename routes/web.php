@@ -14,6 +14,7 @@ use App\Http\Controllers\Site\EnhancingBankingServiceController;
 use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
+use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
 
@@ -60,6 +61,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Corporate Services
     Route::get('/corporate-servicess/{corporate}/edit', [AdminCorporateServiceController::class, 'edit'])->name('corporate.edit');
     Route::put('/corporate-servicess/{corporate}', [AdminCorporateServiceController::class, 'update'])->name('corporate.update');
+
+    //Enhancing Banking Services
+    Route::get('/enhancing-banking-services/{enhancing}/edit', [AdminEnhancingBankingServiceController::class, 'edit'])->name('enhancing.edit');
+    Route::put('/enhancing-banking-services/{enhancing}', [AdminEnhancingBankingServiceController::class, 'update'])->name('enhancing.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
