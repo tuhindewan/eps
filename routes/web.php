@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Site\FAQController;
@@ -21,8 +22,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Admin routes
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
+
+    //Balance transfer
+    Route::get('/balanc-transfer/{balance}/edit', [AdminBalanceTransferController::class, 'edit'])->name('balance.edit');
+    Route::put('/balanc-transfer/{balance}', [AdminBalanceTransferController::class, 'update'])->name('balance.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -22,5 +22,9 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('12345678'),
             ]
         ]);
+
+        $this->call([
+            BalanceTransferSeeder::class,
+        ]);
     }
 }

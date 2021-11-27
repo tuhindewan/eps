@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\BalanceTransfer;
 use Illuminate\Http\Request;
 
 class BalanceTransferController extends Controller
@@ -14,7 +15,8 @@ class BalanceTransferController extends Controller
      */
     public function index()
     {
-        return view('balance.index');
+        $bt = BalanceTransfer::first();
+        return view('balance.index', compact('bt'));
     }
 
     /**
