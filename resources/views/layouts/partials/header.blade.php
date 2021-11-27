@@ -27,11 +27,11 @@
                                         <ul class="single-menu">
                                             <li><a class="dropdown-item" href="{{ route('balance.transfer') }}">Balance Transfer</a></li>
                                             <li><a class="dropdown-item" href="{{ route('bill.payment') }}">Bill and Fee Payment</a></li>
-                                            <li><a class="dropdown-item" href="blog-left-sidebar.html">Merchant Payment</a></li>
-                                            <li><a class="dropdown-item" href="blog-right-sidebar.html">Balance Enquiry</a></li>
-                                            <li><a class="dropdown-item" href="blog-details-left-sidebar.html">Mobile Top-up</a></li>
-                                            <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Corporate Services</a></li>
-                                            <li><a class="dropdown-item" href="blog-details-right-sidebar.html">Enhancing Banking Services</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('merchant.payment') }}">Merchant Payment</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('balance.enquiry') }}">Balance Enquiry</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('mobile.topup') }}">Mobile Top-up</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('corporate.service') }}">Corporate Services</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('enhancing.banking.service') }}">Enhancing Banking Services</a></li>
                                         </ul>
                                     </div>
                                 </div>

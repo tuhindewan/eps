@@ -1,11 +1,16 @@
 <?php
 
-use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Site\FAQController;
 use App\Http\Controllers\Site\BillPaymentController;
+use App\Http\Controllers\Site\MobileTopUpController;
+use App\Http\Controllers\Site\BalanceEnquiryController;
 use App\Http\Controllers\Site\BalanceTransferController;
+use App\Http\Controllers\Site\MerchantPaymentController;
+use App\Http\Controllers\Site\CorporateServiceController;
+use App\Http\Controllers\Site\EnhancingBankingServiceController;
+use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +51,18 @@ Route::get('balance-transfer', [BalanceTransferController::class, 'index'])->nam
 
 // Bill Payment
 Route::get('bill-fee-payment', [BillPaymentController::class, 'index'])->name('bill.payment');
+
+// Merchant Payment
+Route::get('merchant-payment', [MerchantPaymentController::class, 'index'])->name('merchant.payment');
+
+// Balance Enquiry
+Route::get('balance-enquiry', [BalanceEnquiryController::class, 'index'])->name('balance.enquiry');
+
+// Mobile Top-up
+Route::get('mobile-topup', [MobileTopUpController::class, 'index'])->name('mobile.topup');
+
+// Corporate Services
+Route::get('corporate-services', [CorporateServiceController::class, 'index'])->name('corporate.service');
+
+// Enhancing Banking Services
+Route::get('enhancing-banking-services', [EnhancingBankingServiceController::class, 'index'])->name('enhancing.banking.service');
