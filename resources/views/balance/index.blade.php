@@ -22,7 +22,7 @@
                     <div class="breadcrumb-content d-flex flex-column align-items-center text-center">
                         <h3>Balance Transfer</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="text-uppercase" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-uppercase" href="{{ url('/') }}">Home</a></li>
                             <li class="breadcrumb-item active">Balance Transfer</li>
                         </ol>
                     </div>
@@ -42,12 +42,12 @@
                         <div class="maintenance-content my-5 my-md-0">
                             <h2>{{ $bt->title }}</h2>
                             <p>
-                                {{ Str::limit($bt->description, 200, '') }}
+                                {!! Str::limit($bt->description, 200, '') !!}
                                 @if (strlen($bt->description) > 200)
                                     <span id="dots">......</span>
-                                    <span id="more">{{ substr($bt->description, 200) }}</span>
+                                    <span id="more">{!! substr($bt->description, 200) !!}</span>
                                 @endif
-                                <button class="btn btn-sm btn-primary" onclick="myFunction()" id="myBtn">Read more</button>
+                                <button class="btn btn-sm btn-primary" onclick="descriptionExtend()" id="myBtn">Read more</button>
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
 
 @push('page-js')
 <script>
-function myFunction() {
+function descriptionExtend() {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
     var btnText = document.getElementById("myBtn");

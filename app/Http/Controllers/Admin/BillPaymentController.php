@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\BillPayment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
 
 class BillPaymentController extends Controller
 {
@@ -15,8 +17,7 @@ class BillPaymentController extends Controller
      */
     public function index()
     {
-        $bill = BillPayment::first();
-        return view('bill.index', compact('bill'));
+        //
     }
 
     /**
@@ -57,9 +58,9 @@ class BillPaymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BillPayment $bill)
     {
-        //
+        return view('admin.bill.edit', compact('bill'));
     }
 
     /**
@@ -69,9 +70,28 @@ class BillPaymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BillPayment $bill)
     {
-        //
+        if ($request->image) {
+            $imageExtension = $request->image->extension();
+            $name = time() . '.' . $imageExtension;
+            Image::make($request->image)->save(public_path('images/') . $name);
+            DB::table('bill_payments')->where('id', $bill->id)->update([
+                'image' => $name,
+            ]);
+
+            // $userPhoto = public_path('images/') . $bill->image;
+            // if (file_exists($userPhoto)) {
+            //     @unlink($userPhoto);
+            // }
+        }
+
+        DB::table('bill_payments')->where('id', $bill->id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('bill.edit', $bill)
+            ->with('success', 'Bill and Fee Payment feature has been updated');
     }
 
     /**

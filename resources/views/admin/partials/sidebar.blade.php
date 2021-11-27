@@ -12,7 +12,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link active">
+            <a href="{{ route('home') }}" class="nav-link {{ Route::is('home') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
               <p>
                 Dashboard
@@ -20,10 +20,58 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('balance.edit', 1) }}" class="nav-link">
-              <i class="nav-icon fas fa-hand-holding-usd text-blue"></i>
+            <a href="{{ route('balance.edit', 1) }}" class="nav-link {{ Route::is('balance.edit') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-hand-holding-usd"></i>
               <p>
                 Balance Transfer
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('bill.edit', 1) }}" class="nav-link {{ Route::is('bill.edit') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-money-check "></i>
+              <p>
+                Bill and Fee Payment
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-file-invoice-dollar "></i>
+              <p>
+                Merchant Payment
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-coins "></i>
+              <p>
+                Balance Enquiry
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-mobile-alt "></i>
+              <p>
+                Mobile Top-up
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fab fa-acquisitions-incorporated"></i>
+              <p>
+                Corporate Services
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-piggy-bank"></i>
+              <p>
+                Enhancing Banking Services
               </p>
             </a>
           </li>
