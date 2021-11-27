@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('merchant.edit', 1) }}" class="nav-link {{ Route::is('merchant.edit') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file-invoice-dollar "></i>
               <p>
                 Merchant Payment

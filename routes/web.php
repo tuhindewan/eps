@@ -12,6 +12,7 @@ use App\Http\Controllers\Site\CorporateServiceController;
 use App\Http\Controllers\Site\EnhancingBankingServiceController;
 use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
+use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Bill Payment
     Route::get('/bill-payment/{bill}/edit', [AdminBillPaymentController::class, 'edit'])->name('bill.edit');
     Route::put('/bill-payment/{bill}', [AdminBillPaymentController::class, 'update'])->name('bill.update');
+
+    //Merchant Payment
+    Route::get('/merchant-payment/{merchant}/edit', [AdminMerchantPaymentController::class, 'edit'])->name('merchant.edit');
+    Route::put('/merchant-payment/{merchant}', [AdminMerchantPaymentController::class, 'update'])->name('merchant.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

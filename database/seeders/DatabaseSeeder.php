@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BalanceTransferSeeder::class,
             BillPaymentSeeder::class,
+            MerchantPaymentSeeder::class,
         ]);
     }
 }

@@ -42,12 +42,12 @@
                         <div class="maintenance-content my-5 my-md-0">
                             <h2>{{ $bt->title }}</h2>
                             <p>
-                                {!! Str::limit($bt->description, 200, '') !!}
-                                @if (strlen($bt->description) > 200)
+                                {!! $bt->description !!}
+                                {{-- @if (strlen($bt->description) > 200)
                                     <span id="dots">......</span>
                                     <span id="more">{!! substr($bt->description, 200) !!}</span>
                                 @endif
-                                <button class="btn btn-sm btn-primary" onclick="descriptionExtend()" id="myBtn">Read more</button>
+                                <button class="btn btn-sm btn-primary" onclick="descriptionExtend()" id="myBtn">Read more</button> --}}
                             </p>
                         </div>
                     </div>
