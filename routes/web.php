@@ -14,6 +14,7 @@ use App\Http\Controllers\Site\EnhancingBankingServiceController;
 use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
+use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Balance Enquiry
     Route::get('/balance-enquiry/{enquiry}/edit', [BalanceInquiryController::class, 'edit'])->name('enquiry.edit');
     Route::put('/balance-enquiry/{enquiry}', [BalanceInquiryController::class, 'update'])->name('enquiry.update');
+
+    //Mobile Top-up
+    Route::get('/mobile-topup/{mobile}/edit', [AdminMobileTopUpController::class, 'edit'])->name('mobile.edit');
+    Route::put('/mobile-topup/{mobile}', [AdminMobileTopUpController::class, 'update'])->name('mobile.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

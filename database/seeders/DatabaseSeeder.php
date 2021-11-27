@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\BillPayment;
+use App\Models\MobileTop;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
             BillPaymentSeeder::class,
             MerchantPaymentSeeder::class,
             BalanceEnquirySeeder::class,
+            MobileTop::class,
         ]);
     }
 }

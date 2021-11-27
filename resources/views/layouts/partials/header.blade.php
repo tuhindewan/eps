@@ -76,7 +76,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#contact">Contact us</a>
+                            <a class="nav-link scroll" href="{{ url('/#contact') }}">Contact us</a>
                         </li>
                     </ul>
                 </div>

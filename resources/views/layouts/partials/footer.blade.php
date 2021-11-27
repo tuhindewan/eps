@@ -43,7 +43,7 @@
                             <li class="py-2"><a class="text-white-50" href="#">Service Details</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Blog</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Career</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Contact Us</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ url('/#contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

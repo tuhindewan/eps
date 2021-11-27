@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\MobileTop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
 
 class MobileTopUpController extends Controller
 {
@@ -15,8 +17,7 @@ class MobileTopUpController extends Controller
      */
     public function index()
     {
-        $mobile = MobileTop::first();
-        return view('mobile.index', compact('mobile'));
+        //
     }
 
     /**
@@ -57,9 +58,9 @@ class MobileTopUpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(MobileTop $mobile)
     {
-        //
+        return view('admin.mobile.edit', compact('mobile'));
     }
 
     /**
@@ -69,9 +70,28 @@ class MobileTopUpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, MobileTop $mobile)
     {
-        //
+        if ($request->image) {
+            $imageExtension = $request->image->extension();
+            $name = time() . '.' . $imageExtension;
+            Image::make($request->image)->save(public_path('images/') . $name);
+            DB::table('mobile_tops')->where('id', $mobile->id)->update([
+                'image' => $name,
+            ]);
+
+            // $userPhoto = public_path('images/') . $mobile->image;
+            // if (file_exists($userPhoto)) {
+            //     @unlink($userPhoto);
+            // }
+        }
+
+        DB::table('mobile_tops')->where('id', $mobile->id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('mobile.edit', $mobile)
+            ->with('success', 'Mobile Top-up feature has been updated');
     }
 
     /**
