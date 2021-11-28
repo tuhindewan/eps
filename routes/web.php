@@ -16,7 +16,11 @@ use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentControll
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
+use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
+use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
+use App\Http\Controllers\Site\MerchantRegistrationController;
+use App\Http\Controllers\Site\UserRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +69,14 @@ Route::group(['prefix' => 'admin'], function () {
     //Enhancing Banking Services
     Route::get('/enhancing-banking-services/{enhancing}/edit', [AdminEnhancingBankingServiceController::class, 'edit'])->name('enhancing.edit');
     Route::put('/enhancing-banking-services/{enhancing}', [AdminEnhancingBankingServiceController::class, 'update'])->name('enhancing.update');
+
+    //Merchant Registration
+    Route::get('/merchant-registration/{merreg}/edit', [AdminMerchantRegistrationController::class, 'edit'])->name('merreg.edit');
+    Route::put('/merchant-registration/{merreg}', [AdminMerchantRegistrationController::class, 'update'])->name('merreg.update');
+
+    //User Registration
+    Route::get('/user-registration/{userreg}/edit', [AdminUserRegistrationController::class, 'edit'])->name('userreg.edit');
+    Route::put('/user-registration/{userreg}', [AdminUserRegistrationController::class, 'update'])->name('userreg.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -96,3 +108,9 @@ Route::get('corporate-services', [CorporateServiceController::class, 'index'])->
 
 // Enhancing Banking Services
 Route::get('enhancing-banking-services', [EnhancingBankingServiceController::class, 'index'])->name('enhancing.banking.service');
+
+// Merchant Registration
+Route::get('merchant-registration', [MerchantRegistrationController::class, 'index'])->name('merchant.registration.index');
+
+// User Registration
+Route::get('user-registration', [UserRegistrationController::class, 'index'])->name('user.registration.index');

@@ -30,9 +30,11 @@ class DatabaseSeeder extends Seeder
             BillPaymentSeeder::class,
             MerchantPaymentSeeder::class,
             BalanceEnquirySeeder::class,
-            MobileTop::class,
+            MobileTopSeeder::class,
             CorporateServiceSeeder::class,
             EnhancingBankingSeeder::class,
+            MerchantRegistrationSeeder::class,
+            UserRegistrationSeeder::class,
         ]);
     }
 }

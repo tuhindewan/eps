@@ -46,14 +46,13 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <ul class="single-menu">
-                                            <li><a class="dropdown-item" href="blog-two-column.html">Merchant Registration</a></li>
-                                            <li><a class="dropdown-item" href="blog-three-column.html">User Registration</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('merchant.registration.index') }}">Merchant Registration</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('user.registration.index') }}">User Registration</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
-
 
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ url('/#features') }}">Features</a>

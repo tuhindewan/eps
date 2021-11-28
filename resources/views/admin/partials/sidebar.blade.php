@@ -76,6 +76,22 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('merreg.edit', 1) }}" class="nav-link {{ Route::is('merreg.edit') ? 'active' : '' }}"">
+                <i class="nav-icon fas fa-address-book"></i>
+              <p>
+                Merchant Registration
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('userreg.edit', 1) }}" class="nav-link {{ Route::is('userreg.edit') ? 'active' : '' }}"">
+                <i class="nav-icon fas fa-users"></i>
+              <p>
+                User Registration
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
