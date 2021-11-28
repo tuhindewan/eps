@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransfer
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
+use App\Http\Controllers\Admin\FAQController as AdminFAQController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
@@ -83,6 +84,15 @@ Route::group(['prefix' => 'admin'], function () {
     //Service Details
     Route::get('/service-details/{service}/edit', [AdminServiceDetailController::class, 'edit'])->name('service.edit');
     Route::put('/service-details/{service}', [AdminServiceDetailController::class, 'update'])->name('service.update');
+
+    //FAQ
+    Route::prefix('faq')->group(function () {
+        Route::get('/', [AdminFAQController::class, 'index'])->name('admin.faq.index');
+        Route::get('/create', [AdminFAQController::class, 'create'])->name('admin.faq.create');
+        Route::post('/store', [AdminFAQController::class, 'store'])->name('admin.faq.store');
+        Route::get('/{faq}/edit', [AdminFAQController::class, 'edit'])->name('admin.faq.edit');
+        Route::put('/{faq}/update', [AdminFAQController::class, 'update'])->name('admin.faq.update');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

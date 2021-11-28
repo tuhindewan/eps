@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('enhancing.edit', 1) }}" class="nav-link {{ Route::is('enhancing.edit') ? 'active' : '' }}"">
+            <a href="{{ route('enhancing.edit', 1) }}" class="nav-link {{ Route::is('enhancing.edit') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-piggy-bank"></i>
               <p>
                 Enhancing Banking Services
@@ -76,7 +76,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('merreg.edit', 1) }}" class="nav-link {{ Route::is('merreg.edit') ? 'active' : '' }}"">
+            <a href="{{ route('merreg.edit', 1) }}" class="nav-link {{ Route::is('merreg.edit') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Merchant Registration
@@ -84,7 +84,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('userreg.edit', 1) }}" class="nav-link {{ Route::is('userreg.edit') ? 'active' : '' }}"">
+            <a href="{{ route('userreg.edit', 1) }}" class="nav-link {{ Route::is('userreg.edit') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
               <p>
                 User Registration
@@ -93,13 +93,23 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('service.edit', 1) }}" class="nav-link {{ Route::is('service.edit') ? 'active' : '' }}"">
+            <a href="{{ route('service.edit', 1) }}" class="nav-link {{ Route::is('service.edit') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
               <p>
                 Service Details
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin.faq.index') }}" class="nav-link {{ Route::is('admin.faq.index') || Route::is('admin.faq.create') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-question"></i>
+              <p>
+                FAQ
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

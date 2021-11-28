@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\FAQ;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class FAQController extends Controller
 {
@@ -16,7 +16,7 @@ class FAQController extends Controller
     public function index()
     {
         $faqs = FAQ::all();
-        return view('faq.index', compact('faqs'));
+        return view('admin.faq.index', compact('faqs'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FAQController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.faq.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class FAQController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        FAQ::create([
+            'question' => $request->question,
+            'answer' => $request->answer,
+        ]);
+
+        return redirect()->route('admin.faq.index')
+            ->with('success', 'FAQ has been added successfully.');
     }
 
     /**
@@ -57,9 +63,9 @@ class FAQController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FAQ $faq)
     {
-        //
+        return view('admin.faq.edit', compact('faq'));
     }
 
     /**
@@ -69,9 +75,12 @@ class FAQController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, FAQ $faq)
     {
-        //
+        $faq->update($request->all());
+
+        return redirect()->route('admin.faq.index')
+            ->with('success', 'FAQ has been updated successfully.');
     }
 
     /**
