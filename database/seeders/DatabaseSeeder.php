@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             UserRegistrationSeeder::class,
             ServiceDetailSeeder::class,
             PrivacyPolicySeeder::class,
+            TermSeeder::class,
         ]);
     }
 }

@@ -21,10 +21,12 @@ use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRe
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
 use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyController;
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
+use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
 use App\Http\Controllers\Site\ServiceDetailController;
+use App\Http\Controllers\Site\TermController;
 use App\Http\Controllers\Site\UserRegistrationController;
 
 /*
@@ -99,6 +101,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Privacy Policy
     Route::get('/privacy-policy/{privacy}/edit', [AdminPrivacyPolicyController::class, 'edit'])->name('privacy.edit');
     Route::put('/privacy-policy/{privacy}', [AdminPrivacyPolicyController::class, 'update'])->name('privacy.update');
+
+    //Terms and conditions
+    Route::get('/terms-conditions/{term}/edit', [AdminTermController::class, 'edit'])->name('term.edit');
+    Route::put('/terms-conditions/{term}', [AdminTermController::class, 'update'])->name('term.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -142,3 +148,6 @@ Route::get('service-details', [ServiceDetailController::class, 'index'])->name('
 
 // Privacy Policy
 Route::get('privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy.policy.index');
+
+// Terms and conditions
+Route::get('terms-conditions', [TermController::class, 'index'])->name('term.index');
