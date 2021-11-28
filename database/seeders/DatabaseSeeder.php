@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             EnhancingBankingSeeder::class,
             MerchantRegistrationSeeder::class,
             UserRegistrationSeeder::class,
+            ServiceDetailSeeder::class,
         ]);
     }
 }

@@ -18,8 +18,10 @@ use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhanci
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
+use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
+use App\Http\Controllers\Site\ServiceDetailController;
 use App\Http\Controllers\Site\UserRegistrationController;
 
 /*
@@ -77,6 +79,10 @@ Route::group(['prefix' => 'admin'], function () {
     //User Registration
     Route::get('/user-registration/{userreg}/edit', [AdminUserRegistrationController::class, 'edit'])->name('userreg.edit');
     Route::put('/user-registration/{userreg}', [AdminUserRegistrationController::class, 'update'])->name('userreg.update');
+
+    //Service Details
+    Route::get('/service-details/{service}/edit', [AdminServiceDetailController::class, 'edit'])->name('service.edit');
+    Route::put('/service-details/{service}', [AdminServiceDetailController::class, 'update'])->name('service.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -114,3 +120,6 @@ Route::get('merchant-registration', [MerchantRegistrationController::class, 'ind
 
 // User Registration
 Route::get('user-registration', [UserRegistrationController::class, 'index'])->name('user.registration.index');
+
+// Service Details
+Route::get('service-details', [ServiceDetailController::class, 'index'])->name('service.details.index');
