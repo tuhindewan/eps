@@ -19,9 +19,11 @@ use App\Http\Controllers\Admin\FAQController as AdminFAQController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
+use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyController;
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
+use App\Http\Controllers\Site\PrivacyPolicyController;
 use App\Http\Controllers\Site\ServiceDetailController;
 use App\Http\Controllers\Site\UserRegistrationController;
 
@@ -93,6 +95,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/{faq}/edit', [AdminFAQController::class, 'edit'])->name('admin.faq.edit');
         Route::put('/{faq}/update', [AdminFAQController::class, 'update'])->name('admin.faq.update');
     });
+
+    //Privacy Policy
+    Route::get('/privacy-policy/{privacy}/edit', [AdminPrivacyPolicyController::class, 'edit'])->name('privacy.edit');
+    Route::put('/privacy-policy/{privacy}', [AdminPrivacyPolicyController::class, 'update'])->name('privacy.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -133,3 +139,6 @@ Route::get('user-registration', [UserRegistrationController::class, 'index'])->n
 
 // Service Details
 Route::get('service-details', [ServiceDetailController::class, 'index'])->name('service.details.index');
+
+// Privacy Policy
+Route::get('privacy-policy', [PrivacyPolicyController::class, 'index'])->name('privacy.policy.index');

@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
             MerchantRegistrationSeeder::class,
             UserRegistrationSeeder::class,
             ServiceDetailSeeder::class,
+            PrivacyPolicySeeder::class,
         ]);
     }
 }

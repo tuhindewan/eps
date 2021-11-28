@@ -56,7 +56,7 @@
                             <li class="py-2">
                                 <a class="text-white-50" href="{{ route('faq') }}">FAQ</a>
                             </li>
-                            <li class="py-2"><a class="text-white-50" href="#">Privacy Policy</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('privacy.policy.index') }}">Privacy Policy</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Terms &amp; Conditions</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Site Map</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Cookie Policy</a></li>

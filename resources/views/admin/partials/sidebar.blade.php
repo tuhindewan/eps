@@ -111,6 +111,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('privacy.edit', 1) }}" class="nav-link {{ Route::is('privacy.edit') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-user-secret"></i>
+              <p>
+                Privacy Policy
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
