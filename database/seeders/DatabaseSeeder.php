@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             ServiceDetailSeeder::class,
             PrivacyPolicySeeder::class,
             TermSeeder::class,
+            CookieSeeder::class,
         ]);
     }
 }

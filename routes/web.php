@@ -13,6 +13,7 @@ use App\Http\Controllers\Site\CorporateServiceController;
 use App\Http\Controllers\Site\EnhancingBankingServiceController;
 use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
+use App\Http\Controllers\Admin\CookiePolicyController as AdminCookiePolicyController;
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\FAQController as AdminFAQController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyCont
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
+use App\Http\Controllers\Site\CookiePolicyController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
 use App\Http\Controllers\Site\ServiceDetailController;
@@ -105,6 +107,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Terms and conditions
     Route::get('/terms-conditions/{term}/edit', [AdminTermController::class, 'edit'])->name('term.edit');
     Route::put('/terms-conditions/{term}', [AdminTermController::class, 'update'])->name('term.update');
+
+    //Cookie Policy
+    Route::get('/cookie-policy/{cookie}/edit', [AdminCookiePolicyController::class, 'edit'])->name('cookie.edit');
+    Route::put('/cookie-policy/{cookie}', [AdminCookiePolicyController::class, 'update'])->name('cookie.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -151,3 +157,6 @@ Route::get('privacy-policy', [PrivacyPolicyController::class, 'index'])->name('p
 
 // Terms and conditions
 Route::get('terms-conditions', [TermController::class, 'index'])->name('term.index');
+
+// Cookie Policy
+Route::get('cookie-policy', [CookiePolicyController::class, 'index'])->name('cookie.index');

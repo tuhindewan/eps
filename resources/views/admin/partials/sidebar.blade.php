@@ -129,6 +129,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('cookie.edit', 1) }}" class="nav-link {{ Route::is('cookie.edit') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-user-secret"></i>
+              <p>
+                Cookie Policy
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
