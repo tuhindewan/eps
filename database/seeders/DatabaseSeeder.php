@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             CookieSeeder::class,
             CareerSeeder::class,
             AboutUsSeeder::class,
+            SiteMapSeeder::class,
         ]);
     }
 }

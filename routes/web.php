@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRe
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
 use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyController;
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
+use App\Http\Controllers\Admin\SiteMapController as AdminSiteMapController;
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\AboutUsController;
@@ -33,6 +34,7 @@ use App\Http\Controllers\Site\CookiePolicyController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
 use App\Http\Controllers\Site\ServiceDetailController;
+use App\Http\Controllers\Site\SiteMapController;
 use App\Http\Controllers\Site\TermController;
 use App\Http\Controllers\Site\UserRegistrationController;
 
@@ -124,6 +126,10 @@ Route::group(['prefix' => 'admin'], function () {
     //About us
     Route::get('/about-us/{about}/edit', [AdminAboutUsController::class, 'edit'])->name('about.edit');
     Route::put('/about-us/{about}', [AdminAboutUsController::class, 'update'])->name('about.update');
+
+    //Site Map
+    Route::get('/site-map/{site}/edit', [AdminSiteMapController::class, 'edit'])->name('site.edit');
+    Route::put('/site-map/{site}', [AdminSiteMapController::class, 'update'])->name('site.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -181,3 +187,6 @@ Route::get('careers', [CareerController::class, 'index'])->name('career.index');
 
 // About us
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about.index');
+
+// Site Map
+Route::get('site-map', [SiteMapController::class, 'index'])->name('site.index');

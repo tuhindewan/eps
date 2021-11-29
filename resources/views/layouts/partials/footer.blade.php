@@ -58,7 +58,7 @@
                             </li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('privacy.policy.index') }}">Privacy Policy</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('term.index') }}">Terms &amp; Conditions</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Site Map</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('site.index') }}">Site Map</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('cookie.index') }}">Cookie Policy</a></li>
                         </ul>
                     </div>
