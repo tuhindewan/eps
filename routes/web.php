@@ -13,6 +13,7 @@ use App\Http\Controllers\Site\CorporateServiceController;
 use App\Http\Controllers\Site\EnhancingBankingServiceController;
 use App\Http\Controllers\Admin\BalanceTransferController as AdminBalanceTransferController;
 use App\Http\Controllers\Admin\BillPaymentController as AdminBillPaymentController;
+use App\Http\Controllers\Admin\CareerController as AdminCareerController;
 use App\Http\Controllers\Admin\CookiePolicyController as AdminCookiePolicyController;
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailCont
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\BlogController;
+use App\Http\Controllers\Site\CareerController;
 use App\Http\Controllers\Site\CookiePolicyController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
@@ -112,6 +114,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Cookie Policy
     Route::get('/cookie-policy/{cookie}/edit', [AdminCookiePolicyController::class, 'edit'])->name('cookie.edit');
     Route::put('/cookie-policy/{cookie}', [AdminCookiePolicyController::class, 'update'])->name('cookie.update');
+
+    //Career
+    Route::get('/careers/{career}/edit', [AdminCareerController::class, 'edit'])->name('career.edit');
+    Route::put('/careers/{career}', [AdminCareerController::class, 'update'])->name('career.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -164,3 +170,6 @@ Route::get('cookie-policy', [CookiePolicyController::class, 'index'])->name('coo
 
 // Blog
 Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');
+
+// Career
+Route::get('careers', [CareerController::class, 'index'])->name('career.index');

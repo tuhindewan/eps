@@ -138,6 +138,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('career.edit', 1) }}" class="nav-link {{ Route::is('career.edit') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-user-md"></i>
+              <p>
+                Career
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
