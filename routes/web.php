@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyCont
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
+use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\CookiePolicyController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
@@ -120,7 +121,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.sendmail');
 
 // FAQ
-Route::get('faq', [FAQController::class, 'index'])->name('faq');
+Route::get('faqs', [FAQController::class, 'index'])->name('faq');
 
 // Balance Transfer
 Route::get('balance-transfer', [BalanceTransferController::class, 'index'])->name('balance.transfer');
@@ -160,3 +161,6 @@ Route::get('terms-conditions', [TermController::class, 'index'])->name('term.ind
 
 // Cookie Policy
 Route::get('cookie-policy', [CookiePolicyController::class, 'index'])->name('cookie.index');
+
+// Blog
+Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');

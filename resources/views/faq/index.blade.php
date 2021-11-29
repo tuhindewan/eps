@@ -11,7 +11,7 @@
                     <div class="breadcrumb-content d-flex flex-column align-items-center text-center">
                         <h3>Frequently Asked Questions</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="text-uppercase" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-uppercase" href="{{ url('/') }}">Home</a></li>
                             <li class="breadcrumb-item active">FAQ</li>
                         </ol>
                     </div>

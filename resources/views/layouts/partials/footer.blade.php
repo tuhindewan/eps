@@ -41,7 +41,7 @@
                         <ul>
                             <li class="py-2"><a class="text-white-50" href="#">About Us</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('service.details.index') }}">Service Details</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Blog</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('blog.index') }}">Blog</a></li>
                             <li class="py-2"><a class="text-white-50" href="#">Career</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{ url('/#contact') }}">Contact Us</a></li>
                         </ul>
