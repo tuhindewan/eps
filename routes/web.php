@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\CookiePolicyController as AdminCookiePolicyContro
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\FAQController as AdminFAQController;
+use App\Http\Controllers\Admin\IOSAppSupportController as AdminIOSAppSupportController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
 use App\Http\Controllers\Admin\MobileTopUpController as AdminMobileTopUpController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\Site\AboutUsController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\CareerController;
 use App\Http\Controllers\Site\CookiePolicyController;
+use App\Http\Controllers\Site\IOSAppSupportController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
 use App\Http\Controllers\Site\ServiceDetailController;
@@ -130,6 +132,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Site Map
     Route::get('/site-map/{site}/edit', [AdminSiteMapController::class, 'edit'])->name('site.edit');
     Route::put('/site-map/{site}', [AdminSiteMapController::class, 'update'])->name('site.update');
+
+    //IOS App Support
+    Route::get('/ios-app-support/{ios}/edit', [AdminIOSAppSupportController::class, 'edit'])->name('ios.edit');
+    Route::put('/ios-app-support/{ios}', [AdminIOSAppSupportController::class, 'update'])->name('ios.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -190,3 +196,6 @@ Route::get('about-us', [AboutUsController::class, 'index'])->name('about.index')
 
 // Site Map
 Route::get('site-map', [SiteMapController::class, 'index'])->name('site.index');
+
+// IOS App Support
+Route::get('ios-app-support', [IOSAppSupportController::class, 'index'])->name('ios.index');

@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             CareerSeeder::class,
             AboutUsSeeder::class,
             SiteMapSeeder::class,
+            IOSAppSeeder::class,
         ]);
     }
 }
