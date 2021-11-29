@@ -147,6 +147,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('about.edit', 1) }}" class="nav-link {{ Route::is('about.edit') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                About Us
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

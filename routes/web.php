@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController as AdminAboutUsController;
 use App\Http\Controllers\Admin\BalanceInquiryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\Admin\PrivacyPolicyController as AdminPrivacyPolicyCont
 use App\Http\Controllers\Admin\ServiceDetailController as AdminServiceDetailController;
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
+use App\Http\Controllers\Site\AboutUsController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\CareerController;
 use App\Http\Controllers\Site\CookiePolicyController;
@@ -118,12 +120,15 @@ Route::group(['prefix' => 'admin'], function () {
     //Career
     Route::get('/careers/{career}/edit', [AdminCareerController::class, 'edit'])->name('career.edit');
     Route::put('/careers/{career}', [AdminCareerController::class, 'update'])->name('career.update');
+
+    //About us
+    Route::get('/about-us/{about}/edit', [AdminAboutUsController::class, 'edit'])->name('about.edit');
+    Route::put('/about-us/{about}', [AdminAboutUsController::class, 'update'])->name('about.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Contact up route
-
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.sendmail');
 
 // FAQ
@@ -173,3 +178,6 @@ Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');
 
 // Career
 Route::get('careers', [CareerController::class, 'index'])->name('career.index');
+
+// About us
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about.index');

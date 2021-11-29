@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             TermSeeder::class,
             CookieSeeder::class,
             CareerSeeder::class,
+            AboutUsSeeder::class,
         ]);
     }
 }
