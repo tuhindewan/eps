@@ -12,8 +12,8 @@
                         <h3 class="fw-3 mt-2 mt-sm-3">Easy Payment System</h3>
                         <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
                         <div class="button-group">
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered"><span>Download</span></a>
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
+                            <a href="" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
+                            <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -115,12 +115,12 @@
                         <p class="d-none d-sm-block my-3">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p>
                         <!-- Store Buttons -->
                         <div class="button-group store-buttons">
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                            <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                 <i class="icofont icofont-brand-android-robot dsp-tc"></i>
                                 <p class="dsp-tc">GET IT ON
                                     <br> <span>Google Play</span></p>
                             </a>
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                            <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                 <i class="icofont icofont-brand-apple dsp-tc"></i>
                                 <p class="dsp-tc">AVAILABLE ON
                                     <br> <span>Apple Store</span></p>
@@ -775,7 +775,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                     </div>
                     <!-- Start Free Button -->
                     <div class="start-free-btn mt-4 mt-lg-0">
-                        <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered"><span>Try EPS Now</span></a>
+                        <a href="" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Try EPS Now</span></a>
                     </div>
                 </div>
             </div>
@@ -800,12 +800,12 @@ To minimize the barriers of digital transaction, and support financial instituti
                         <p class="d-none d-sm-block my-3">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system.</p>
                         <!-- Store Buttons -->
                         <div class="button-group store-buttons">
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                            <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                 <i class="icofont icofont-brand-android-robot dsp-tc"></i>
                                 <p class="dsp-tc">GET IT ON
                                     <br> <span>Google Play</span></p>
                             </a>
-                            <a href="https://eps.com.bd/coming-soon.html" class="btn btn-bordered">
+                            <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                 <i class="icofont icofont-brand-apple dsp-tc"></i>
                                 <p class="dsp-tc">AVAILABLE ON
                                     <br> <span>Apple Store</span></p>
@@ -950,4 +950,43 @@ To minimize the barriers of digital transaction, and support financial instituti
         </div>
     </section>
     <!--====== Contact Area End ======-->
+
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content" style="border-radius: 15px">
+            <div class="modal-header" style="padding-bottom: 0px; padding-top: 5px;">
+                <a class="navbar-brand" href="https://eps.com.bd/">
+                    <img class="logo" src="{{ asset('assets/img/logo/logo.png') }}" style="max-height: 30px;" alt="">
+                </a>
+              <a type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-top: 25px;">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="modal-body" style="padding-bottom: 20px">
+                <div class="maintenance-area">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-12 col-md-6 order-2 order-md-1">
+                                <!-- Maintenance Content -->
+                                <div class="maintenance-content my-5 my-md-0">
+                                    <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-10 col-md-6 order-1 order-md-2 mx-auto pt-4 pt-md-0">
+                                <img src="{{ asset('images/coming2.jpg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> --}}
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 @endsection
