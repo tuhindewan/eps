@@ -67,7 +67,7 @@
                                     <div class="col-12">
                                         <ul class="single-menu">
                                             <li><a class="dropdown-item" href="{{ route('ios.index') }}">For iOS</a></li>
-                                            <li><a class="dropdown-item" href="blog-three-column.html">For Android</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('android.index') }}">For Android</a></li>
                                         </ul>
                                     </div>
                                 </div>

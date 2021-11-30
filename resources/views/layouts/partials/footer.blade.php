@@ -70,7 +70,7 @@
                         <h3 class="footer-title text-white mb-2">Download</h3>
                         <ul>
                             <li class="py-2"><a class="text-white-50" href="{{ route('ios.index') }}">For IOS</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">For Android</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('android.index') }}">For Android</a></li>
                         </ul>
                     </div>
                 </div>

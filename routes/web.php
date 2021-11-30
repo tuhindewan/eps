@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutUsController as AdminAboutUsController;
+use App\Http\Controllers\Admin\AndroidAppSupportController as AdminAndroidAppSupportController;
 use App\Http\Controllers\Admin\BalanceInquiryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\Admin\SiteMapController as AdminSiteMapController;
 use App\Http\Controllers\Admin\TermController as AdminTermController;
 use App\Http\Controllers\Admin\UserRegistrationController as AdminUserRegistrationController;
 use App\Http\Controllers\Site\AboutUsController;
+use App\Http\Controllers\Site\AndroidAppSupportController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\CareerController;
 use App\Http\Controllers\Site\CookiePolicyController;
@@ -136,6 +138,10 @@ Route::group(['prefix' => 'admin'], function () {
     //IOS App Support
     Route::get('/ios-app-support/{ios}/edit', [AdminIOSAppSupportController::class, 'edit'])->name('ios.edit');
     Route::put('/ios-app-support/{ios}', [AdminIOSAppSupportController::class, 'update'])->name('ios.update');
+
+    //Android App Support
+    Route::get('/android-app-support/{android}/edit', [AdminAndroidAppSupportController::class, 'edit'])->name('android.edit');
+    Route::put('/android-app-support/{android}', [AdminAndroidAppSupportController::class, 'update'])->name('android.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -199,3 +205,6 @@ Route::get('site-map', [SiteMapController::class, 'index'])->name('site.index');
 
 // IOS App Support
 Route::get('ios-app-support', [IOSAppSupportController::class, 'index'])->name('ios.index');
+
+// Android App Support
+Route::get('android-app-support', [AndroidAppSupportController::class, 'index'])->name('android.index');
