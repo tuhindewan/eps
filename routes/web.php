@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\CookiePolicyController as AdminCookiePolicyContro
 use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServiceController;
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\FAQController as AdminFAQController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\IOSAppSupportController as AdminIOSAppSupportController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
@@ -34,6 +35,7 @@ use App\Http\Controllers\Site\AndroidAppSupportController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\CareerController;
 use App\Http\Controllers\Site\CookiePolicyController;
+use App\Http\Controllers\Site\FeatureController as SiteFeatureController;
 use App\Http\Controllers\Site\IOSAppSupportController;
 use App\Http\Controllers\Site\MerchantRegistrationController;
 use App\Http\Controllers\Site\PrivacyPolicyController;
@@ -141,6 +143,10 @@ Route::group(['prefix' => 'admin'], function () {
     //Android App Support
     Route::get('/android-app-support/{android}/edit', [AdminAndroidAppSupportController::class, 'edit'])->name('android.edit');
     Route::put('/android-app-support/{android}', [AdminAndroidAppSupportController::class, 'update'])->name('android.update');
+
+    //Features
+    Route::get('/features/{feature}/edit', [FeatureController::class, 'edit'])->name('feature.edit');
+    Route::put('/features/{feature}', [FeatureController::class, 'update'])->name('feature.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -207,3 +213,6 @@ Route::get('ios-app-support', [IOSAppSupportController::class, 'index'])->name('
 
 // Android App Support
 Route::get('android-app-support', [AndroidAppSupportController::class, 'index'])->name('android.index');
+
+// Features
+Route::get('features', [SiteFeatureController::class, 'index'])->name('feature.index');

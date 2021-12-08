@@ -250,12 +250,9 @@
                         <!-- Headings -->
                         <div class="headings d-flex align-items-center mb-4">
                             <span class="text-uppercase d-none d-sm-block">Features</span>
-                            <h2 class="text-capitalize">EPS is the only all in one payment gateway to do any kind of transaction</h2>
+                            <h2 class="text-capitalize">{{ $feature->title }}</h2>
                         </div>
-                        <p class="my-3">VISION
-To accelerate the transformation to achieve a sustainable digital financial eco-system.
-MISSION
-To minimize the barriers of digital transaction, and support financial institutions by facilitating their customers/clients with digital payment services.</p>
+                        <p class="my-3">{!! $feature->description !!}</p>
                         <!-- Counter List -->
                         <div class="counter-list">
                             <ul>
@@ -268,7 +265,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                                         </div>
                                         <!-- Counter Text -->
                                         <div class="counter-text">
-                                            <span class="counter d-inline-block mt-3 mb-2">2350</span>
+                                            <span class="counter d-inline-block mt-3 mb-2">{{ $feature->users }}</span>
                                             <h5>Users</h5>
                                         </div>
                                     </div>
@@ -282,7 +279,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                                         </div>
                                         <!-- Counter Text -->
                                         <div class="counter-text">
-                                            <span class="counter d-inline-block mt-3 mb-2">1895</span>
+                                            <span class="counter d-inline-block mt-3 mb-2">{{ $feature->accounts }}</span>
                                             <h5>Acounts</h5>
                                         </div>
                                     </div>
@@ -296,7 +293,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                                         </div>
                                         <!-- Counter Text -->
                                         <div class="counter-text">
-                                            <span class="counter d-inline-block mt-3 mb-2">1580</span>
+                                            <span class="counter d-inline-block mt-3 mb-2">{{ $feature->developers }}</span>
                                             <h5>Developers</h5>
                                         </div>
                                     </div>
@@ -310,7 +307,7 @@ To minimize the barriers of digital transaction, and support financial instituti
                                         </div>
                                         <!-- Counter Text -->
                                         <div class="counter-text">
-                                            <span class="counter d-inline-block mt-3 mb-2">1358</span>
+                                            <span class="counter d-inline-block mt-3 mb-2">{{ $feature->download }}</span>
                                             <h5>Download</h5>
                                         </div>
                                     </div>

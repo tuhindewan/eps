@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Feature;
 use App\Models\BillPayment;
 use Illuminate\Http\Request;
 use App\Models\BalanceTransfer;
@@ -18,6 +19,7 @@ class WelcomeController extends Controller
         $bill = BillPayment::first();
         $merchant = MerchantPayment::first();
         $corporate = CorporateService::first();
-        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate'));
+        $feature = Feature::first();
+        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate', 'feature'));
     }
 }

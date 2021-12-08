@@ -123,7 +123,8 @@
 
             <li class="nav-item {{ Route::is('about.edit') ||
                                 Route::is('service.edit') ||
-                                Route::is('career.edit')   ? 'menu-open' : '' }}">
+                                Route::is('career.edit') ||
+                                Route::is('feature.edit')   ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-link text-orange"></i>
                     <p>
@@ -148,14 +149,22 @@
                           </p>
                         </a>
                       </li>
-                      <li class="nav-item {{ Route::is('career.edit') ? 'active' : '' }}">
+                    <li class="nav-item {{ Route::is('career.edit') ? 'active' : '' }}">
                         <a href="{{ route('career.edit', 1) }}" class="nav-link">
                             <i class="nav-icon fas fa-user-md"></i>
-                          <p>
+                            <p>
                             Career
-                          </p>
+                            </p>
                         </a>
-                      </li>
+                    </li>
+                    <li class="nav-item {{ Route::is('feature.edit') ? 'active' : '' }}">
+                        <a href="{{ route('feature.edit', 1) }}" class="nav-link">
+                            <i class="nav-icon fab fa-accusoft"></i>
+                            <p>
+                            Features
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
