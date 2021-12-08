@@ -124,7 +124,8 @@
             <li class="nav-item {{ Route::is('about.edit') ||
                                 Route::is('service.edit') ||
                                 Route::is('career.edit') ||
-                                Route::is('feature.edit')   ? 'menu-open' : '' }}">
+                                Route::is('feature.edit') ||
+                                Route::is('admin.advantage.index')   ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-link text-orange"></i>
                     <p>
@@ -162,6 +163,14 @@
                             <i class="nav-icon fab fa-accusoft"></i>
                             <p>
                             Features
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ Route::is('admin.advantage.index') ? 'active' : '' }}">
+                        <a href="{{ route('admin.advantage.index') }}" class="nav-link">
+                            <i class="nav-icon fab fa-adversal"></i>
+                            <p>
+                            Advantages
                             </p>
                         </a>
                     </li>

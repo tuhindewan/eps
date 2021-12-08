@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Advantage;
 use App\Models\Feature;
 use App\Models\BillPayment;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ class WelcomeController extends Controller
         $merchant = MerchantPayment::first();
         $corporate = CorporateService::first();
         $feature = Feature::first();
-        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate', 'feature'));
+        $advantages = Advantage::all();
+        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate', 'feature', 'advantages'));
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutUsController as AdminAboutUsController;
+use App\Http\Controllers\Admin\AdvantageController;
 use App\Http\Controllers\Admin\AndroidAppSupportController as AdminAndroidAppSupportController;
 use App\Http\Controllers\Admin\BalanceInquiryController;
 use Illuminate\Support\Facades\Route;
@@ -147,6 +148,15 @@ Route::group(['prefix' => 'admin'], function () {
     //Features
     Route::get('/features/{feature}/edit', [FeatureController::class, 'edit'])->name('feature.edit');
     Route::put('/features/{feature}', [FeatureController::class, 'update'])->name('feature.update');
+
+    //Advantages
+    Route::prefix('advantages')->group(function () {
+        Route::get('/', [AdvantageController::class, 'index'])->name('admin.advantage.index');
+        // Route::get('/create', [AdminFAQController::class, 'create'])->name('admin.faq.create');
+        // Route::post('/store', [AdminFAQController::class, 'store'])->name('admin.faq.store');
+        Route::get('/{advantage}/edit', [AdvantageController::class, 'edit'])->name('admin.advantage.edit');
+        Route::put('/{advantage}/update', [AdvantageController::class, 'update'])->name('admin.advantage.update');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

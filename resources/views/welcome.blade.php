@@ -39,57 +39,20 @@
         <div class="container">
             <div class="row">
                 <!-- Benifits Item -->
+                @foreach ($advantages as $advantage)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                     <div class="benifits-item text-center p-3">
                         <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/1.png') }}" alt="">
+                            <img src="{{ 'images/'.$advantage->icon }}" alt="">
                         </div>
                         <!-- Benifits Text -->
                         <div class="benifits-text">
-                            <h3 class="mb-2">Best Experience</h3>
-                            <p>Advanced features like real time usage update and charge-free bill payment guarantee the best possible app experience</p>
+                            <h3 class="mb-2">{{ $advantage->title }}</h3>
+                            <p>{{ $advantage->description }}</p>
                         </div>
                     </div>
                 </div>
-                <!-- Benifits Item -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benifits-item text-center p-3">
-                        <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/2.png') }}" alt="">
-                        </div>
-                        <!-- Benifits Text -->
-                        <div class="benifits-text">
-                            <h3 class="mb-2">Easy to use</h3>
-                            <p>Our app is designed to give you a great experience. Features like personalized wallet, adding cashout charges makes our app easy and convenient to use & designed only for you</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Benifits Item -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benifits-item text-center p-3">
-                        <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/3.png') }}" alt="">
-                        </div>
-                        <!-- Benifits Text -->
-                        <div class="benifits-text">
-                            <h3 class="mb-2">24/7 Support</h3>
-                            <p>24/7 support services are here to ensure our customers' success and business productivity – whether for on-site assistance, technical, or remote support.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Benifits Item -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="600">
-                    <div class="benifits-item text-center p-3">
-                        <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/4.png') }}" alt="">
-                        </div>
-                        <!-- Benifits Text -->
-                        <div class="benifits-text">
-                            <h3 class="mb-2">Complete Security</h3>
-                            <p>Full-proof security is ensured through features like blockchain technology and device authentication</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
