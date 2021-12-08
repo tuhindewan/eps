@@ -108,11 +108,9 @@
                         <!-- Headings -->
                         <div class="headings d-flex align-items-center mb-4">
                             <span class="text-uppercase d-none d-sm-block">About</span>
-                            <h2 class="text-capitalize">Easy to manage all your transaction using
-                                EPS App</h2>
+                            <h2 class="text-capitalize">{{ $about->title }}</h2>
                         </div>
-                        <p class="my-3">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system. Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc. </p>
-                        <p class="d-none d-sm-block my-3">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p>
+                        <p class="my-3">{!! $about->description !!}</p>
                         <!-- Store Buttons -->
                         <div class="button-group store-buttons">
                             <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
@@ -131,7 +129,7 @@
                 <div class="col-12 col-lg-6">
                     <!-- About Thumb -->
                     <div class="about-thumb text-center d-none d-lg-block">
-                        <img src="{{ asset('assets/img/bg/about.png') }}" alt="">
+                        <img src="{{ 'images/'.$about->image }}" alt="">
                     </div>
                 </div>
             </div>

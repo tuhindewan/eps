@@ -41,6 +41,7 @@ use App\Http\Controllers\Site\ServiceDetailController;
 use App\Http\Controllers\Site\SiteMapController;
 use App\Http\Controllers\Site\TermController;
 use App\Http\Controllers\Site\UserRegistrationController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,9 +54,7 @@ use App\Http\Controllers\Site\UserRegistrationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 
 // Admin routes
