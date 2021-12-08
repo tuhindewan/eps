@@ -178,7 +178,13 @@
                         <!-- Single Work -->
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Balance Transfer</h3>
-                            <p>Under this service, an account holder in a bank/MFS/e-wallet can send money from his/her account to a receiver’s bank/MFS/e-wallet account using EPS.</p>
+                            <p>
+                                @if (strlen($balanacTransfer->description) > 125)
+                                    {{ Str::limit($balanacTransfer->description, 125, '') }}
+                                    <span id="dots">...</span>
+                                @endif
+                            </p>
+                            <a href="{{ route('balance.transfer') }}" class="blog-btn mt-3">Read More</a>
                         </div>
                     </a>
                 </div>
@@ -187,7 +193,13 @@
                         <!-- Single Work -->
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Bill and Fee Payment</h3>
-                            <p>Using EPS App, the registered user will be able to pay bills and fees.</p>
+                            <p>
+                                @if (strlen($bill->description) > 125)
+                                    {{ Str::limit($bill->description, 125, '') }}
+                                    <span id="dots">...</span>
+                                @endif
+                            </p>
+                            <a href="{{ route('bill.payment') }}" class="blog-btn mt-3">Read More</a>
                         </div>
                     </a>
                 </div>
@@ -196,7 +208,13 @@
                         <!-- Single Work -->
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Merchant Payment</h3>
-                            <p>Any offline merchant can use EPS to receive the payment into his/her bank/MFS/e-wallet account from a walking customer’s bank/MFS/e-wallet account.</p>
+                            <p>
+                                @if (strlen($merchant->description) > 125)
+                                    {{ Str::limit($merchant->description, 125, '') }}
+                                    <span id="dots">...</span>
+                                @endif
+                            </p>
+                            <a href="{{ route('merchant.payment') }}" class="blog-btn mt-3">Read More</a>
                         </div>
                     </a>
                 </div>
@@ -205,7 +223,13 @@
                         <!-- Single Work -->
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Corporate Services</h3>
-                            <p>EPS will provide one-stop solution for the corporate clients dealing with large number of transactions. Easy Wage Disbursement is one of such services to be availed from EPS.</p>
+                            <p>
+                                @if (strlen($corporate->description) > 125)
+                                    {{ Str::limit($corporate->description, 125, '') }}
+                                    <span id="dots">...</span>
+                                @endif
+                            </p>
+                            <a href="{{ route('corporate.service') }}" class="blog-btn mt-3">Read More</a>
                         </div>
                     </a>
                 </div>

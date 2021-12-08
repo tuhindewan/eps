@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\BillPayment;
 use Illuminate\Http\Request;
+use App\Models\BalanceTransfer;
+use App\Models\MerchantPayment;
+use App\Models\CorporateService;
 
 class WelcomeController extends Controller
 {
     public function index()
     {
         $about = AboutUs::first();
-        // dd($about);
-        return view('welcome', compact('about'));
+        $balanacTransfer = BalanceTransfer::first();
+        $bill = BillPayment::first();
+        $merchant = MerchantPayment::first();
+        $corporate = CorporateService::first();
+        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate'));
     }
 }
