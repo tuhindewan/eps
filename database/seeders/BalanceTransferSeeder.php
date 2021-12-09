@@ -16,8 +16,8 @@ class BalanceTransferSeeder extends Seeder
     {
         DB::table('balance_transfers')->insert([
             [
-                'title' => 'Server is under maintenance',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.',
+                'title' => 'Balance Transfer',
+                'description' => 'Under this service, an account holder in a bank/MFS/e-wallet can send money from his/her account to a receiver’s bank/MFS/e-wallet account using EPS.',
                 'image' => 'Untitled-1.png',
             ]
         ]);

@@ -142,8 +142,8 @@
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Balance Transfer</h3>
                             <p>
-                                @if (strlen($balanacTransfer->description) > 125)
-                                    {{ Str::limit($balanacTransfer->description, 125, '') }}
+                                @if (strlen($balanacTransfer->description) > 50)
+                                    {{ Str::limit($balanacTransfer->description, 50, '') }}
                                     <span id="dots">...</span>
                                 @endif
                             </p>
@@ -157,8 +157,8 @@
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Bill and Fee Payment</h3>
                             <p>
-                                @if (strlen($bill->description) > 125)
-                                    {{ Str::limit($bill->description, 125, '') }}
+                                @if (strlen($bill->description) > 50)
+                                    {{ Str::limit($bill->description, 50, '') }}
                                     <span id="dots">...</span>
                                 @endif
                             </p>
@@ -172,8 +172,8 @@
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Merchant Payment</h3>
                             <p>
-                                @if (strlen($merchant->description) > 125)
-                                    {{ Str::limit($merchant->description, 125, '') }}
+                                @if (strlen($merchant->description) > 50)
+                                    {{ Str::limit($merchant->description, 50, '') }}
                                     <span id="dots">...</span>
                                 @endif
                             </p>
@@ -187,8 +187,8 @@
                         <div class="single-work d-inline-block text-center p-4">
                             <h3 class="mb-2">Corporate Services</h3>
                             <p>
-                                @if (strlen($corporate->description) > 125)
-                                    {{ Str::limit($corporate->description, 125, '') }}
+                                @if (strlen($corporate->description) > 50)
+                                    {{ Str::limit($corporate->description, 50, '') }}
                                     <span id="dots">...</span>
                                 @endif
                             </p>

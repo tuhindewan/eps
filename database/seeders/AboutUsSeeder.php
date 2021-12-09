@@ -16,9 +16,9 @@ class AboutUsSeeder extends Seeder
     {
         DB::table('about_us')->insert([
             [
-                'title' => 'Server is under maintenance',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.',
-                'image' => 'Untitled-1.png',
+                'title' => 'Easy To Manage All Your Transaction Using EPS App',
+                'description' => '<p class="my-3" style="margin-right: 0px; margin-left: 0px; padding: 0px; font-size: 14px; line-height: 1.8; color: rgb(119, 119, 119); font-family: Poppins, sans-serif;">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system. Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p><p class="d-none d-sm-block my-3" style="margin-right: 0px; margin-left: 0px; padding: 0px; font-size: 14px; line-height: 1.8; color: rgb(119, 119, 119); font-family: Poppins, sans-serif;">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p>',
+                'image' => 'about.png',
             ]
         ]);
     }
