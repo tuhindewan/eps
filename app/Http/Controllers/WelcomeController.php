@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\BalanceTransfer;
 use App\Models\MerchantPayment;
 use App\Models\CorporateService;
+use App\Models\IndexContent;
 
 class WelcomeController extends Controller
 {
@@ -22,6 +23,7 @@ class WelcomeController extends Controller
         $corporate = CorporateService::first();
         $feature = Feature::first();
         $advantages = Advantage::all();
-        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate', 'feature', 'advantages'));
+        $indexContent = IndexContent::first();
+        return view('welcome', compact('about', 'balanacTransfer', 'bill', 'merchant', 'corporate', 'feature', 'advantages', 'indexContent'));
     }
 }

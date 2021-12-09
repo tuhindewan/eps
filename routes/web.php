@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\CorporateServiceController as AdminCorporateServi
 use App\Http\Controllers\Admin\EnhancingBankingServiceController as AdminEnhancingBankingServiceController;
 use App\Http\Controllers\Admin\FAQController as AdminFAQController;
 use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\IndexContentController;
 use App\Http\Controllers\Admin\IOSAppSupportController as AdminIOSAppSupportController;
 use App\Http\Controllers\Admin\MerchantPaymentController as AdminMerchantPaymentController;
 use App\Http\Controllers\Admin\MerchantRegistrationController as AdminMerchantRegistrationController;
@@ -157,6 +158,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/{advantage}/edit', [AdvantageController::class, 'edit'])->name('admin.advantage.edit');
         Route::put('/{advantage}/update', [AdvantageController::class, 'update'])->name('admin.advantage.update');
     });
+
+    //Index Content
+    Route::get('/index-contents/{indexContent}/edit', [IndexContentController::class, 'edit'])->name('indexContent.edit');
+    Route::put('/index-contents/{indexContent}', [IndexContentController::class, 'update'])->name('indexContent.update');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

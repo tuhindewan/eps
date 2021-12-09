@@ -46,6 +46,7 @@ class DatabaseSeeder extends Seeder
             AndroidAppSeeder::class,
             FeatureSeeder::class,
             AdvantageSeeder::class,
+            IndexContentSeeder::class
         ]);
     }
 }

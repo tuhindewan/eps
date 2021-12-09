@@ -125,7 +125,8 @@
                                 Route::is('service.edit') ||
                                 Route::is('career.edit') ||
                                 Route::is('feature.edit') ||
-                                Route::is('admin.advantage.index')   ? 'menu-open' : '' }}">
+                                Route::is('admin.advantage.index') ||
+                                Route::is('indexContent.edit')   ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-link text-orange"></i>
                     <p>
@@ -171,6 +172,15 @@
                             <i class="nav-icon fab fa-adversal"></i>
                             <p>
                             Advantages
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {{ Route::is('indexContent.edit') ? 'active' : '' }}">
+                        <a href="{{ route('indexContent.edit', 1) }}" class="nav-link">
+                            <i class="nav-icon fab fa-adversal"></i>
+                            <p>
+                            Index Content
                             </p>
                         </a>
                     </li>

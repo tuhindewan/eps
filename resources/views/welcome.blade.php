@@ -10,7 +10,7 @@
                     <div class="welcome-intro">
                         <h1>EPS</h1>
                         <h3 class="fw-3 mt-2 mt-sm-3">Easy Payment System</h3>
-                        <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                        <p class="my-3">{!! $indexContent->content !!}</p>
                         <div class="button-group">
                             <a href="" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
                             <a href="" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-5 col-lg-6">
                     <!-- Welcome Thumb -->
                     <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                        <img src="{{ asset('assets/img/welcome/welcome-mockup-2.png') }}" alt="">
+                        <img src="{{ 'images/'.$indexContent->image }}" alt="">
                     </div>
                     <!-- Video Icon -->
                     <div class="video-icon d-none d-lg-block">
